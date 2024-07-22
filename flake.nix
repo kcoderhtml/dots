@@ -6,7 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # NixOS hardware configuration
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-23.11";
@@ -28,7 +28,7 @@
       mockingjay = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [./nixos/configuration.nix nixos-hardware.nixosModules.framework-11th-gen-intel];
+        modules = [./nixos/configuration.nix];
       };
     };
 
