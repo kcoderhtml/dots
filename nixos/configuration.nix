@@ -18,6 +18,8 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./framework/common.nix
+    ./framework/common/intel.nix
   ];
 
   nixpkgs = {
@@ -89,6 +91,10 @@
       PasswordAuthentication = false;
     };
   };
+
+   # Requires at least 5.16 for working wi-fi and bluetooth.
+  # https://community.frame.work/t/using-the-ax210-with-linux-on-the-framework-laptop/1844/89
+  boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16") (lib.mkDefault pkgs.linuxPackages_latest);
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
