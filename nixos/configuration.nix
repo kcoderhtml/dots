@@ -18,8 +18,6 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    ./framework/common.nix
-    ./framework/common/intel.nix
   ];
 
   nixpkgs = {
