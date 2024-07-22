@@ -61,8 +61,7 @@
 
   # FIXME: Add the rest of your current configuration
 
-  # TODO: Set your hostname
-  networking.hostName = "your-hostname";
+  networking.hostName = "moonlark";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
