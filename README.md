@@ -5,7 +5,12 @@
 
 ## Installation
 
-I have absolutely no idea
+~~I have absolutely no idea~~ I kinda understand now?
+
+1. Install NixOS via the [official guide](https://nixos.org/download.html)
+2. Enable git with `sed -i 's/^{$/{\n  programs.git.enable = true;/' /etc/nixos/configuration.nix` and then run `nixos-rebuild switch`
+3. Clone this repo to your `/mnt/etc/nixos` folder with `git clone https://github.com/kcoderhtml/dots.git .`
+4. `nixos-install --flake .#moonlark`
 
 ## Screenshots
 
@@ -19,3 +24,4 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [hyprland-community/hyprnix](https://github.com/hyprland-community/hyprnix)
 - [spikespaz/dotfiles](https://github.com/spikespaz/dotfiles)
 - [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)
+- [mccd.space install guide](https://mccd.space/posts/git-to-deploy/)
