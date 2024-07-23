@@ -12,6 +12,7 @@ I have absolutely no idea
 🫡 Will report back!
 
 ## Credits
+
 Thanks a bunch to the following people for their dots, configs, and general inspiration which i've shamelessly stolen from:
 
 - [NixOS/nixos-hardware](https://github.com/NixOS/nixos-hardware)
