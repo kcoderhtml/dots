@@ -76,6 +76,8 @@
     ];
   };
 
+  programs.hyprland.enable = true;
+  
   # enable cups
   services.printing.enable = true;
 
