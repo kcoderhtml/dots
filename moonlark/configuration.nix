@@ -102,7 +102,7 @@
   };
 
   # import the secret
-  age.identityPaths = [ "/home/kierank/.ssh/id_rsa" ];
+  age.identityPaths = [ "/home/kierank/.ssh/id_rsa" "/etc/ssh/id_rsa" "/mnt/etc/ssh/id_rsa" ];
   age.secrets.wifi = {
     file = ../secrets/wifi.age;
     owner = "kierank";
