@@ -14,15 +14,19 @@
 5. Run disko with `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/disk-config.nix`
 6. Mount disk with `mount | grep /mnt` and then `cd /mnt/etc/nixos`
 7. Clone this repo to your `/mnt/etc/nixos` folder with `git clone https://github.com/kcoderhtml/dots.git .`
-8. install the flake: `nixos-install --flake .#moonlark --no-root-passwd`
-9. Once it finishes run nix install and then reboot
+8. Add your ssh private key to `/mtn/etc/ssh/id_rsa` 
+9. install the flake: `nixos-install --flake .#moonlark --no-root-passwd`
+10. Once it finishes run nix install and then reboot
 ```bash
 nixos-install
 reboot
 ```
-10. Pray to the nix gods that it works 🙏
-11. If it worked then you should be able to login with the user `kierank` and the password `lolzthisaintsecure!`
-12. Change the password with `passwd kierank`
+11. Pray to the nix gods that it works 🙏
+12. If it worked then you should be able to login with the user `kierank` and the password `lolzthisaintsecure!`
+13. Change the password with `passwd kierank`
+14. Move the config to your local directory with `mkdir ~/etc; sudo mv /etc/nixos ~/etc`
+15. Link the config back to `/etc/nixos` with `sudo ln -s ~/etc/nixos /etc`
+16. Change the config permissions: `sudo chown -R $(id -un):users ~/etc/nixos`, `sudo chown kierank -R ~/etc/nixos`, and `sudo chown kierank -R ~/etc/nixos/.*`
 
 ## Screenshots
 
@@ -40,3 +44,5 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [disco docs](https://github.com/nix-community/disko/blob/master/docs/quickstart.md)
 - [XDG_CONFIG_HOME setting](https://github.com/NixOS/nixpkgs/issues/224525)
 - [Daru-san/spicetify-nix](https://github.com/Daru-san/spicetify-nix)
+- [agenix](https://nixos.wiki/wiki/Agenix)
+- [wpa_supplicant env file docs](https://search.nixos.org/options?show=networking.wireless.environmentFile&from=0&size=50&sort=relevance&type=packages&query=networking.wireless)
