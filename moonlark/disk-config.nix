@@ -4,7 +4,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/nvme0n1";
+        device = "nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
