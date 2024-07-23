@@ -12,8 +12,9 @@
 3. Enable git with `sed -i 's/^{$/{\n  programs.git.enable = true;/' /etc/nixos/configuration.nix` and then run `nixos-rebuild switch`
 4. Download the disk config with `curl https://github.com/kcoderhtml/dots/raw/master/moonlark/disk-config.nix -o /tmp/disk-config.nix`
 5. Run disko with `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/disk-config.nix`
-6. Clone this repo to your `/root/dots` folder with `git clone https://github.com/kcoderhtml/dots.git`
-7. `nixos-install --flake .#moonlark`
+6. Mount disk with `mount | grep /mnt` and then `cd /mnt/etc/nixos`
+7. Clone this repo to your `/mnt/etc/nixos` folder with `git clone https://github.com/kcoderhtml/dots.git .`
+8. `nixos-install --flake .#moonlark`
 
 ## Screenshots
 
