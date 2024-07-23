@@ -37,3 +37,4 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [spikespaz/dotfiles](https://github.com/spikespaz/dotfiles)
 - [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)
 - [mccd.space install guide](https://mccd.space/posts/git-to-deploy/)
+- [disco docs](https://github.com/nix-community/disko/blob/master/docs/quickstart.md)
