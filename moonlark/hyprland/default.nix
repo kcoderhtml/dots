@@ -5,15 +5,15 @@
     ./config.nix
     ./windowrules.nix
     ./keybinds.nix
-    ./waybar.nix
+    #./waybar.nix
   ];
 
-  home.packages = [
-    # Screen Capture
-    pkgs.prtsc
-    # xwayland perm for pkexec
-    pkgs.xorg.xhost
-  ];
+ # home.packages = [
+ #   # Screen Capture
+ #   pkgs.prtsc
+ #   # xwayland perm for pkexec
+ #   pkgs.xorg.xhost
+ # ]; 
 
   wayland.windowManager.hyprland = {
     enable = true;

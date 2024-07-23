@@ -272,7 +272,7 @@
     ### WINDOW RESIZING ###
     groups.toggleSplit
     groups.mouseResizeWindow
-    }
+    
     ### WORKSPACE SWITCHING ###
     groups.switchWorkspace
     ### WORKSPACE WINDOW MOVEMENT ###

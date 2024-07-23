@@ -14,6 +14,9 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    
+    # spicetify
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -37,8 +40,40 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 
+  # git config
+  programs.git = {
+    enable = true;
+    userName = "Kieran Klukas";
+    userEmail = "92754843+kcoderhtml@users.noreply.github.com";
+    aliases = {
+      c = "commit";
+      p = "push";
+      pl = "pull";
+    };
+    extraConfig = {
+      commit.gpgsign = true;
+      gpg.format = "ssh";
+      gpg.ssh.allowedSignersFile = "~/.ssh/allowedSigners";
+      user.signingKey = "~/.ssh/id_rsa.pub";
+    };
+  };
+
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        shuffle # shuffle+ (special characters are sanitized out of extension names)
+      ];
+      theme = spicePkgs.themes.catppuccin;
+      colorScheme = "macchiato";
+    };
+  
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

@@ -1,3 +1,4 @@
+
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
@@ -20,8 +21,11 @@
 
     # Import disko's configuration
     ./disk-config.nix
+    
+    # hpyrland config
+    #./hyprland
   ];
-
+	
   nixpkgs = {
     # Configure your nixpkgs instance
     config = {
@@ -49,16 +53,74 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  environment.systemPackages = map lib.lowPrio [
-    pkgs.curl
-    pkgs.gitMinimal
-  ];
-
-  networking = {
-    hostName = "moonlark";
-    wireless.enable = true;
+  time = {
+    timeZone = "America/New_York";
+    hardwareClockInLocalTime = true;
   };
 
+  services.automatic-timezoned.enable = true;
+
+  environment.systemPackages = map lib.lowPrio [
+    pkgs.curl
+    inputs.agenix.packages.x86_64-linux.default
+    pkgs.wpa_supplicant_gui
+    pkgs.alacritty
+    pkgs.zsh
+    pkgs.swww
+    pkgs.sunwait
+    pkgs.wluma
+    pkgs.brightnessctl
+    pkgs.playerctl
+    pkgs.firefox
+    pkgs.slack
+    pkgs.gnome.nautilus
+    pkgs.gnome.file-roller
+    pkgs.fprintd
+    pkgs.gitMinimal
+    (pkgs.vscode-with-extensions.override {
+        vscodeExtensions = with pkgs.vscode-extensions; [
+          bbenoist.nix
+        ];
+      })
+    pkgs.github-desktop
+  ];
+
+  services.fprintd.enable = true;
+
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
+
+  programs.hyprland.enable = true;
+
+  environment.sessionVariables = {
+    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME   = "$HOME/.local/share";
+    XDG_STATE_HOME  = "$HOME/.local/state";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  # import the secret
+  age.identityPaths = [ "/home/kierank/.ssh/id_rsa" ];
+  age.secrets.wifi = {
+    file = ../secrets/wifi.age;
+    owner = "kierank";
+  };
+
+  # setup the network
+  networking = {
+    hostName = "moonlark";
+    wireless = {
+      environmentFile = config.age.secrets.wifi.path;
+      userControlled.enable = true;
+      enable = true;
+      networks = {
+        "KlukasNet".psk = "@PSK_HOME@";
+        "Everseen".psk = "@PSK_HOTSPOT@";
+      };
+    };
+  };
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
     kierank = {
@@ -69,7 +131,7 @@
       openssh.authorizedKeys.keys = [
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzEEjvbL/ttqmYoDjxYQmDIq36BabROJoXgQKeh9liBxApwp+2PmgxROzTg42UrRc9pyrkq5kVfxG5hvkqCinhL1fMiowCSEs2L2/Cwi40g5ZU+QwdcwI8a4969kkI46PyB19RHkxg54OUORiIiso/WHGmqQsP+5wbV0+4riSnxwn/JXN4pmnE//stnyAyoiEZkPvBtwJjKb3Ni9n3eNLNs6gnaXrCtaygEZdebikr9kS2g9mM696HvIFgM6cdR/wZ7DcLbG3IdTXuHN7PC3xxL+Y4ek5iMreQIPmuvs4qslbthPGYoYbYLUQiRa9XO5s/ksIj5Z14f7anHE6cuTQVpvNWdGDOigyIVS5qU+4ZF7j+rifzOXVL48gmcAvw/uV68m5Wl/p0qsC/d8vI3GYwEsWG/EzpAlc07l8BU2LxWgN+d7uwBFaJV9VtmUDs5dcslsh8IbzmtC9gq3OLGjklxTfIl6qPiL8U33oc/UwqzvZUrI2BlbagvIZYy6rP+q0= kierank@mockingjay"
       ];
-      extraGroups = ["wheel" "networkmanager" "audio" "docker"];
+      extraGroups = ["wheel" "networkmanager" "audio" "video" "docker" "plugdev"];
     };
     root.openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzEEjvbL/ttqmYoDjxYQmDIq36BabROJoXgQKeh9liBxApwp+2PmgxROzTg42UrRc9pyrkq5kVfxG5hvkqCinhL1fMiowCSEs2L2/Cwi40g5ZU+QwdcwI8a4969kkI46PyB19RHkxg54OUORiIiso/WHGmqQsP+5wbV0+4riSnxwn/JXN4pmnE//stnyAyoiEZkPvBtwJjKb3Ni9n3eNLNs6gnaXrCtaygEZdebikr9kS2g9mM696HvIFgM6cdR/wZ7DcLbG3IdTXuHN7PC3xxL+Y4ek5iMreQIPmuvs4qslbthPGYoYbYLUQiRa9XO5s/ksIj5Z14f7anHE6cuTQVpvNWdGDOigyIVS5qU+4ZF7j+rifzOXVL48gmcAvw/uV68m5Wl/p0qsC/d8vI3GYwEsWG/EzpAlc07l8BU2LxWgN+d7uwBFaJV9VtmUDs5dcslsh8IbzmtC9gq3OLGjklxTfIl6qPiL8U33oc/UwqzvZUrI2BlbagvIZYy6rP+q0= kierank@mockingjay"

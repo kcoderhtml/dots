@@ -17,11 +17,20 @@
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+    
+    # agenix
+    agenix.url = "github:ryantm/agenix";
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    agenix,
     home-manager,
     nixos-hardware,
     ...
@@ -38,6 +47,7 @@
         modules = [
           inputs.disko.nixosModules.disko
           { disko.devices.disk.disk1.device = "/dev/vda"; }
+          agenix.nixosModules.default
           ./moonlark/configuration.nix
         ];
       };
