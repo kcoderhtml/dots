@@ -14,6 +14,9 @@
 
     # hyprland nix
     hyprland-nix.url = "github:hyprland-community/hyprnix";
+
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -29,9 +32,14 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       moonlark = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
-        modules = [./moonlark/configuration.nix];
+        modules = [
+          inputs.disko.nixosModules.disko
+          { disko.devices.disk.disk1.device = "/dev/vda"; }
+          ./moonlark/configuration.nix
+        ];
       };
     };
   };
