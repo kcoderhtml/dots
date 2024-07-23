@@ -28,7 +28,7 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      mockingjay = nixpkgs.lib.nixosSystem {
+      moonlark = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         # > Our main nixos configuration file <
         modules = [./moonlark/configuration.nix];
