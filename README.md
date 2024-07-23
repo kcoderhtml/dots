@@ -20,7 +20,9 @@
 nixos-install
 reboot
 ```
-10. Pray to the nix gods that it works
+10. Pray to the nix gods that it works 🙏
+11. If it worked then you should be able to login with the user `kierank` and the password `lolzthisaintsecure!`
+12. Change the password with `passwd kierank`
 
 ## Screenshots
 
