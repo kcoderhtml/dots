@@ -10,9 +10,10 @@
 1. Install NixOS via the [official guide](https://nixos.org/download.html)
 2. `sudo -i`
 3. Enable git with `sed -i 's/^{$/{\n  programs.git.enable = true;/' /etc/nixos/configuration.nix` and then run `nixos-rebuild switch`
-4. Clone this repo to your `/root/dots` folder with `git clone https://github.com/kcoderhtml/dots.git`
-5. `sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /dots/moonlark/disk-config.nix`
-6. `nixos-install --flake .#moonlark`
+4. Download the disk config with `curl -o disk-config.nix https://github.com/kcoderhtml/dots/raw/master/moonlark/disk-config.nix`
+5. Run disko with `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko disk-config.nix`
+6. Clone this repo to your `/root/dots` folder with `git clone https://github.com/kcoderhtml/dots.git`
+7. `nixos-install --flake .#moonlark`
 
 ## Screenshots
 
