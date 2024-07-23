@@ -1,5 +1,3 @@
-# Example to create a bios compatible gpt partition
-{ lib, ... }:
 {
   disko.devices = {
     disk = {
@@ -31,4 +29,4 @@
       };
     };
   };
-};
+}
