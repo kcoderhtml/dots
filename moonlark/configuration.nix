@@ -46,7 +46,10 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  networking.hostName = "moonlark";
+  networking = {
+    hostName = "moonlark";
+    wireless.enable = true;
+  };
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -67,12 +70,6 @@
 
   # enable bluetooth
   hardware.bluetooth.enable = true;
-
-  # enable wifi
-  networking.networkmanager.enable = true;
-
-  # enable networking
-  networking.networkmanager.enable = true;
 
   # enable pipewire
   # rtkit is optional but recommended
