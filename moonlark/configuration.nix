@@ -113,7 +113,7 @@
     kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16") (lib.mkDefault pkgs.linuxPackages_latest);
     loader.grub = {
       # no need to set devices, disko will add all devices that have a EF02 partition to the list already
-      # devices = [ ];
+      device = "nodev";
       efiSupport = true;
       efiInstallAsRemovable = true;
     };
