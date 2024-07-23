@@ -8,9 +8,11 @@
 ~~I have absolutely no idea~~ I kinda understand now?
 
 1. Install NixOS via the [official guide](https://nixos.org/download.html)
-2. Enable git with `sed -i 's/^{$/{\n  programs.git.enable = true;/' /etc/nixos/configuration.nix` and then run `nixos-rebuild switch`
-3. Clone this repo to your `/mnt/etc/nixos` folder with `git clone https://github.com/kcoderhtml/dots.git .`
-4. `nixos-install --flake .#moonlark`
+2. `sudo -i`
+3. Enable git with `sed -i 's/^{$/{\n  programs.git.enable = true;/' /etc/nixos/configuration.nix` and then run `nixos-rebuild switch`
+4. Clone this repo to your `/root/dots` folder with `git clone https://github.com/kcoderhtml/dots.git`
+5. `sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /dots/moonlark/disk-config.nix`
+6. `nixos-install --flake .#moonlark`
 
 ## Screenshots
 
