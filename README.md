@@ -14,7 +14,15 @@
 5. Run disko with `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/disk-config.nix`
 6. Mount disk with `mount | grep /mnt` and then `cd /mnt/etc/nixos`
 7. Clone this repo to your `/mnt/etc/nixos` folder with `git clone https://github.com/kcoderhtml/dots.git .`
-8. `nixos-install --flake .#moonlark`
+8. install the flake: `nixos-install --flake .#moonlark --no-root-passwd`
+9. Once it finishes run nix install and then reboot
+```bash
+nixos-install
+reboot
+```
+10. Pray to the nix gods that it works 🙏
+11. If it worked then you should be able to login with the user `kierank` and the password `lolzthisaintsecure!`
+12. Change the password with `passwd kierank`
 
 ## Screenshots
 
@@ -29,3 +37,6 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [spikespaz/dotfiles](https://github.com/spikespaz/dotfiles)
 - [Misterio77/nix-starter-configs](https://github.com/Misterio77/nix-starter-configs)
 - [mccd.space install guide](https://mccd.space/posts/git-to-deploy/)
+- [disco docs](https://github.com/nix-community/disko/blob/master/docs/quickstart.md)
+- [XDG_CONFIG_HOME setting](https://github.com/NixOS/nixpkgs/issues/224525)
+- [Daru-san/spicetify-nix](https://github.com/Daru-san/spicetify-nix)
