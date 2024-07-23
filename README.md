@@ -39,3 +39,4 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [mccd.space install guide](https://mccd.space/posts/git-to-deploy/)
 - [disco docs](https://github.com/nix-community/disko/blob/master/docs/quickstart.md)
 - [XDG_CONFIG_HOME setting](https://github.com/NixOS/nixpkgs/issues/224525)
+- [Daru-san/spicetify-nix](https://github.com/Daru-san/spicetify-nix)
