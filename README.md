@@ -14,7 +14,13 @@
 5. Run disko with `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko /tmp/disk-config.nix`
 6. Mount disk with `mount | grep /mnt` and then `cd /mnt/etc/nixos`
 7. Clone this repo to your `/mnt/etc/nixos` folder with `git clone https://github.com/kcoderhtml/dots.git .`
-8. `nixos-install --flake .#moonlark`
+8. install the flake: `nixos-install --flake .#moonlark`
+9. Once it finishes run nix install and then reboot
+```bash
+nixos-install
+reboot
+```
+10. Pray to the nix gods that it works
 
 ## Screenshots
 
