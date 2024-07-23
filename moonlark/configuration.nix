@@ -101,7 +101,7 @@
   boot = {
     kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "5.16") (lib.mkDefault pkgs.linuxPackages_latest);
     loader.grub.device = "/dev/disk/by-uuid/5A0A-6C6E";
-  }
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
