@@ -85,25 +85,20 @@
       command_timeout = 1000;
       
       format = lib.concatStrings [
-        "[](purple)$env_var"
+        "\n"
+        "$env_var"
         "$all$character"
       ];
       
       character = {
-        success_symbol = "[](bold green)";
+        success_symbol = "[](bold purple)";
         error_symbol = "[](bold red)";
       };
       
-      env_var.STARSHIP_DISTRO = {
-        format = "[$env_value](bold green)";
-        variable = "STARSHIP_DISTRO";
-        disabled = false;
-      };
-
       username = {
         style_user = "green";
         style_root = "red";
-        format = "[$user]($style) ";
+        format = "[󱄅 $user]($style) ";
 	disabled = false;
         show_always = true;
       };
