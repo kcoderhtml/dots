@@ -46,3 +46,6 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [Daru-san/spicetify-nix](https://github.com/Daru-san/spicetify-nix)
 - [agenix](https://nixos.wiki/wiki/Agenix)
 - [wpa_supplicant env file docs](https://search.nixos.org/options?show=networking.wireless.environmentFile&from=0&size=50&sort=relevance&type=packages&query=networking.wireless)
+- [escaping nix variables](https://www.reddit.com/r/NixOS/comments/jmlohf/escaping_interpolation_in_bash_string/)
+- [nerd fonts cheat sheet](https://www.nerdfonts.com/cheat-sheet)
+- [setting the default shell in nix](https://www.reddit.com/r/NixOS/comments/z16mt8/cant_seem_to_set_default_shell_using_homemanager/)
