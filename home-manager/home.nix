@@ -49,13 +49,13 @@
     aliases = {
       c = "commit";
       p = "push";
-      pl = "pull";
     };
     extraConfig = {
       commit.gpgsign = true;
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.ssh/allowedSigners";
       user.signingKey = "~/.ssh/id_rsa.pub";
+      pull.rebase = true;
     };
   };
 
@@ -182,7 +182,6 @@
       update = "sudo nixos-rebuild switch";
       gc = "git commit";
       gp = "git push";
-      gpl = "git pull";
     };
     history = {
       size = 10000;
