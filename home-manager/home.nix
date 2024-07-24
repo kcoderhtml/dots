@@ -180,6 +180,9 @@
       ll = "ls -l";
       la = "ls -la";
       update = "sudo nixos-rebuild switch";
+      gc = "git commit";
+      gp = "git push";
+      gpl = "git pull";
     };
     history = {
       size = 10000;
