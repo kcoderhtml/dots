@@ -148,24 +148,25 @@
        };
 
        docker_context = {
-         format = "via [ $context](bold blue) ";
+         symbol = " ";
          disabled = false;
        };
 
        python = {
-         symbol = " ";
+         symbol = "󰌠 ";
          python_binary = "python3";
          disabled = false;
        };
 
        nodejs = {
-         format = "via [ $version](bold green) ";
-         disabled = true;
+         symbol = " ";
+         detect_files = ["package.json" ".node-version" "!bunfig.toml" "!bun.lockb"];
+         disabled = false;
        };
 
-       ruby = {
-         format = "via [ $version]($style) ";
-         disabled = true;
+       bun = {
+         symbol = "󰟈 ";
+         disabled = false;
        };
     };
   };
