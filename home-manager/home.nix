@@ -132,18 +132,18 @@
       };
 
       git_status = {
-         format = "[\($all_status$ahead_behind\)]($style) ";
+         format = "[《$all_status$ahead_behind》]($style) ";
          style = "bold green";
-         conflicted = "🏳";
+         conflicted = " ";
          up_to_date = " ";
          untracked = " ";
-         #ahead = "⇡";
-         diverged = "⇕⇡⇣";
-         #behind = "⇣";
-         stashed = " ";
+         ahead = "⇡$count";
+         diverged = "⇡$ahead_count⇣$behind_count";
+         behind = "⇣$count";
+         stashed = "󱑿 ";
          modified = " ";
          staged = "[++\($count\)](green)";
-         renamed = "襁 ";
+         renamed = "󱅄 ";
          deleted = " ";
        };
 
