@@ -22,6 +22,8 @@
     inputs.catppuccin.homeManagerModules.catppuccin
 
     ./hyprland.nix
+
+    ./waybar.nix
   ];
 
   nixpkgs = {
@@ -116,7 +118,7 @@
         style_user = "green";
         style_root = "red";
         format = "[󱄅 $user]($style) ";
-	disabled = false;
+	      disabled = false;
         show_always = true;
       };
       

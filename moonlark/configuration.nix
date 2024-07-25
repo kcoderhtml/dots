@@ -96,6 +96,7 @@
 
   fonts.packages = with pkgs; [
     nerdfonts
+    fira
   ];
 
   environment.sessionVariables = {
