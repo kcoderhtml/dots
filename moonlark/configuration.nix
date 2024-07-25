@@ -73,6 +73,8 @@
     pkgs.brightnessctl
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     pkgs.mako
+    pkgs.notify-desktop
+    pkgs.bc
     pkgs.playerctl
     pkgs.firefox
     pkgs.slack
