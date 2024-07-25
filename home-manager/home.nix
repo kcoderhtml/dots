@@ -20,6 +20,8 @@
 
     # catpuccin
     inputs.catppuccin.homeManagerModules.catppuccin
+
+    ./hyprland.nix
   ];
 
   nixpkgs = {
