@@ -1,0 +1,45 @@
+#################################################
+# BASIC CONFIGURATION
+#################################################
+
+# Set your local latitude and longitude for sun calculations
+# latitude="44.906658N"
+# longitude="-86.033386W"
+
+# Set full path to the wallpaper theme folder
+# Theme folder names:grep
+#
+# Blake Watson & Sunpaper: Corporate-Synergy
+# Apple: The-Beach The-Cliffs The-Lake The-Desert
+# Louis Coyle: Lakeside
+#
+wallpaperPath="$SUNPAPERDIR/share/images/Lakeside"
+
+#################################################
+# Animate transitions with SWWW MODE 
+# requires (https://github.com/Horus645/swww)
+# and Wayland
+#################################################
+#
+# For smooth low memory animated transitions between 
+# images.
+#
+# This also resolves the gray flash in Sway whenever changing
+# wallpaper. (https://github.com/swaywm/sway/issues/3693)
+#
+# enable this mode here with 
+# swww_enable="true"
+swww_enable="true"
+
+# swww should already be installed and configured.
+# sunpaper will launch the swww daemon if it's not
+# already started.
+
+# swww takes two options for animation control of the
+# transition between images: frame rate and step (more
+# info: https://github.com/Horus645/swww/issues/51)
+#
+# swww_fps <1 to 255>
+# swww_step <1 to 255>
+swww_fps="4"
+swww_step="1"
