@@ -23,7 +23,7 @@
     ./disk-config.nix
     
     # hpyrland config
-    ./hyprland
+    # ./hyprland
   ];
 	
   nixpkgs = {
@@ -69,12 +69,14 @@
     pkgs.starship
     pkgs.swww
     pkgs.sunwait
+    pkgs.sunpaper
     pkgs.wluma
     pkgs.brightnessctl
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     pkgs.mako
     pkgs.notify-desktop
     pkgs.bc
+    pkgs.wl-clipboard
     pkgs.playerctl
     pkgs.firefox
     pkgs.slack
