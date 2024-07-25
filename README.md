@@ -49,3 +49,4 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [escaping nix variables](https://www.reddit.com/r/NixOS/comments/jmlohf/escaping_interpolation_in_bash_string/)
 - [nerd fonts cheat sheet](https://www.nerdfonts.com/cheat-sheet)
 - [setting the default shell in nix](https://www.reddit.com/r/NixOS/comments/z16mt8/cant_seem_to_set_default_shell_using_homemanager/)
+- [hyprwm/contrib](https://github.com/hyprwm/contrib)
