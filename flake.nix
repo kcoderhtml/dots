@@ -3,17 +3,20 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
     # NixOS hardware configuration
     hardware.url = "github:NixOS/nixos-hardware/master";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # hyprland nix
     hyprland-nix.url = "github:hyprland-community/hyprnix";
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+    };
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +28,9 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # catppuccin
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs = {
@@ -33,6 +39,7 @@
     agenix,
     home-manager,
     nixos-hardware,
+    hyprland-contrib,
     ...
   } @ inputs: let
     inherit (self) outputs;

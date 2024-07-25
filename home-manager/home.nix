@@ -17,6 +17,9 @@
     
     # spicetify
     inputs.spicetify-nix.homeManagerModules.default
+
+    # catpuccin
+    inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
   nixpkgs = {
@@ -40,6 +43,18 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
+
+  # catppuccin
+  catppuccin = {
+    enable = true;
+    accent = "green";
+    flavor = "macchiato";
+    pointerCursor = {
+      enable = true;
+      accent = "blue";
+      flavor = "macchiato";
+    };
+  };
 
   # git config
   programs.git = {
@@ -212,7 +227,12 @@
       }
     ];
   };
-  
+
+  services.mako = {
+    enable = true;
+    defaultTimeout = 4000;
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 

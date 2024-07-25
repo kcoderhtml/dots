@@ -71,6 +71,8 @@
     pkgs.sunwait
     pkgs.wluma
     pkgs.brightnessctl
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    pkgs.mako
     pkgs.playerctl
     pkgs.firefox
     pkgs.slack
