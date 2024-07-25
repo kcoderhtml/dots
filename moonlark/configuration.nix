@@ -23,7 +23,7 @@
     ./disk-config.nix
     
     # hpyrland config
-    #./hyprland
+    ./hyprland
   ];
 	
   nixpkgs = {

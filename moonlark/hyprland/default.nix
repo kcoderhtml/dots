@@ -2,18 +2,11 @@
   imports = [
     inputs.hyprland-nix.homeManagerModules.hyprland
     # inputs.hyprland-nix.homeManagerModules.xdg-desktop-portals
-    ./config.nix
-    ./windowrules.nix
-    ./keybinds.nix
+    #./config.nix
+    #./windowrules.nix
+    #./keybinds.nix
     #./waybar.nix
   ];
-
- # home.packages = [
- #   # Screen Capture
- #   pkgs.prtsc
- #   # xwayland perm for pkexec
- #   pkgs.xorg.xhost
- # ]; 
 
   wayland.windowManager.hyprland = {
     enable = true;
