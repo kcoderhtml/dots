@@ -77,6 +77,8 @@
     pkgs.notify-desktop
     pkgs.bc
     pkgs.wl-clipboard
+    pkgs.psmisc
+    pkgs.jq
     pkgs.playerctl
     pkgs.firefox
     pkgs.slack

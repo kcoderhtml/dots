@@ -86,6 +86,7 @@ in {
           "network"
           "tray"
           "privacy"
+          "custom/webcam"
           "custom/hostname"
         ];
 
@@ -282,6 +283,26 @@ in {
               "tooltip-icon-size" = 24;
             }
           ];
+        };
+
+        "custom/webcam" = {
+          return-type = "json";
+          interval = 2;
+          exec = mkScript {
+            deps = [pkgs.jq pkgs.psmisc];
+            script = ''
+              # get programs using the video0 endpoint
+              ps -eo user,pid,cmd -q "$(fuser /dev/video0 2>/dev/null | xargs)" |\
+              # omit the column headings and the first line which is wireplumber
+              sed -n "1,2!p" |\
+              # just get the pid and program columns
+              awk '{print $2 " " $3}' |\
+              # filter out the program path
+              awk -F "/" '{print "{\"tooltip\": \"" $1 " " $NF "\"}"}' |\
+              jq -s 'if length > 0 then {text: "󰄀 ", tooltip: (map(.tooltip) | join("\r"))} else {text: "󱦿 ", tooltip: "No applications are using your webcam!"} end' |\
+              jq --unbuffered --compact-output
+            '';
+          };
         };
 
         "custom/player" = {
