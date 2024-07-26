@@ -267,6 +267,9 @@
   services.mako = {
     enable = true;
     defaultTimeout = 4000;
+    margin = "58,6";
+    font = "Fira Sans 12";
+    borderRadius = 5;
   };
 
   # Nicely reload system units when changing configs
