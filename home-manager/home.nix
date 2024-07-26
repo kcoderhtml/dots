@@ -63,6 +63,12 @@
     };
   };
 
+  qt = {
+    style.name = "kvantum";
+    platformTheme.name = "kvantum";
+    enable = true;
+  };
+
   # git config
   programs.git = {
     enable = true;
