@@ -13,7 +13,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # hyprland nix
-    hyprland-nix.url = "github:hyprland-community/hyprnix";
+    Hyprnix.url = "github:hyprland-community/hyprnix";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
     };

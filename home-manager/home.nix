@@ -21,7 +21,10 @@
     # catpuccin
     inputs.catppuccin.homeManagerModules.catppuccin
 
+    inputs.Hyprnix.homeManagerModules.hyprland
+
     ./hyprland.nix
+    # ./hyprland
 
     ./waybar.nix
   ];
@@ -59,6 +62,8 @@
       flavor = "macchiato";
     };
   };
+
+  wayland.windowManager.hyprland.enable = true;
 
   # git config
   programs.git = {
