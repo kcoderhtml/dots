@@ -426,9 +426,6 @@ in {
         #custom-currentplayer {
           padding-right: 0;
         }
-        #tray {
-          color: @surface1;
-        }
         #custom-gpu, #cpu, #memory {
           margin-left: 0.05em;
           margin-right: 0.55em;
