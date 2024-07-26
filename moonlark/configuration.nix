@@ -95,6 +95,7 @@
   ];
 
   services.fprintd.enable = true;
+  security.pam.services.hyprlock = {};
 
   fonts.packages = with pkgs; [
     nerdfonts
@@ -151,6 +152,7 @@
   };
 
   programs.hyprland.enable = true;
+  services.hypridle.enable = true;
   
   # enable cups
   services.printing.enable = true;
