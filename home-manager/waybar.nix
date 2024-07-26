@@ -178,6 +178,10 @@ in {
             {ipaddr}/{cidr}
             Up: {bandwidthUpBits}
             Down: {bandwidthDownBits}'';
+          on-click = mkScript {
+            deps = [pkgs.wpa_supplicant pkgs.notify-desktop];
+            script = ''wpa_cli reconnect; notify-desktop "reconnecting to wifi" -t 1200'';
+          };
         };
 
         "custom/menu" = {
