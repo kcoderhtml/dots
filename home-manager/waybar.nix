@@ -44,7 +44,6 @@
       '';
     };
 
-  swayCfg = config.wayland.windowManager.sway;
   hyprlandCfg = config.wayland.windowManager.hyprland;
 in {
   # Let it try to start a few more times
@@ -61,22 +60,16 @@ in {
       primary = {
         exclusive = false;
         passthrough = false;
-        height = 40;
+        height = 46;
         margin = "6";
         position = "top";
         modules-left =
-          ["custom/menu"]
-          ++ (lib.optionals swayCfg.enable [
-            "sway/workspaces"
-            "sway/mode"
-          ])
-          ++ (lib.optionals hyprlandCfg.enable [
-            "hyprland/workspaces"
-            "hyprland/submap"
-          ])
-          ++ [
+          [
+            "custom/menu"
             "custom/currentplayer"
             "custom/player"
+            "hyprland/workspaces"
+            "hyprland/submap"
           ];
 
         modules-center = [
@@ -85,14 +78,14 @@ in {
           "clock"
           "pulseaudio"
           "battery"
-          "custom/unread-mail"
+          # "custom/unread-mail"
         ];
 
         modules-right = [
           # "custom/gammastep" TODO: currently broken for some reason
-          "custom/rfkill"
           "network"
           "tray"
+          "privacy"
           "custom/hostname"
         ];
 
@@ -158,8 +151,20 @@ in {
           onclick = "";
         };
 
-        "sway/window" = {
-          max-length = 20;
+        "hyprland/workspaces" = {
+          format =  "{icon}   {windows}";
+          window-rewrite-default =  " ";
+          window-rewrite-seperator = "";
+          window-rewrite = {
+            "title<.*github.*>" = "󰊤";
+            "title<.*youtube.*>" = "";
+            "title<\*Gmail*>" = "󰊫";
+            "class<firefox>" = "";
+            "alacritty" = "";
+            "code" = "󰨞";
+            "slack" = "󰒱";
+            "initialtitle<Spotify*>" = "󰓇";
+          };
         };
 
         network = {
@@ -256,6 +261,29 @@ in {
           };
         };
 
+        privacy = {
+          "icon-spacing" = 0;
+          "icon-size" = 18;
+          "transition-duration" = 250;
+          modules = [
+            {
+              type = "screenshare";
+              tooltip = true;
+              "tooltip-icon-size" = 24;
+            }
+            {
+              type = "audio-out";
+              tooltip = true;
+              "tooltip-icon-size" = 24;
+            }
+            {
+              type = "audio-in";
+              tooltip = true;
+              "tooltip-icon-size" = 24;
+            }
+          ];
+        };
+
         "custom/player" = {
           exec-if = mkScript {
             deps = [pkgs.playerctl];
@@ -320,11 +348,13 @@ in {
 
         #workspaces button {
           background-color: @surface0;
-          color: @surface1;
-          padding-left: 0.4em;
-          padding-right: 0.4em;
-          margin-top: 0.15em;
-          margin-bottom: 0.15em;
+          color: @surface2;
+          padding-left: 0.2em;
+          padding-right: 0.2em;
+          margin-left: 0.25em;
+          margin-right: 0.25em;
+          margin-top: 0.4em;
+          margin-bottom: 0.4em;
         }
         #workspaces button.hidden {
           background-color: @surface0;
@@ -332,8 +362,18 @@ in {
         }
         #workspaces button.focused,
         #workspaces button.active {
-          background-color: @blue;
+          background-color: shade(@blue, 0.7);
           color: @green;
+        }
+
+        #workspaces button:hover {
+          background-color: @surface3;
+          color: @surface1;
+        }
+
+        #privacy-item {
+          margin-left: 0.1em;
+          margin-right: 0.1em;
         }
 
         #clock {
