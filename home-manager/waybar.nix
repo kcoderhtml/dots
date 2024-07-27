@@ -192,6 +192,7 @@ in {
             "code" = "󰨞";
             "slack" = "󰒱";
             "initialtitle<Spotify*>" = "󰓇";
+            "class<org.gnome.Nautilus>" = "󰉓";
           };
         };
 
