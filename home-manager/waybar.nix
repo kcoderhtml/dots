@@ -78,6 +78,7 @@ in {
           "clock"
           "pulseaudio"
           "battery"
+          "idle_inhibitor"
           # "custom/unread-mail"
         ];
 
@@ -128,9 +129,13 @@ in {
         idle_inhibitor = {
           format = "{icon}";
           format-icons = {
-            activated = "󰒳";
-            deactivated = "󰒲";
+            activated = "󰅶 ";
+            deactivated = "󰾫 ";
           };
+          tooltip-format-activated =
+            "Caffinated! device will not sleep.";
+          tooltip-format-deactivated =
+            "no caffeine :( device will sleep when not in use.";
         };
 
         battery = {
