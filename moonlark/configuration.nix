@@ -97,7 +97,8 @@
     pkgs.github-desktop
   ];
 
-  services.gnome.gnome-keyring.enable = true;
+  services.gnome.gnome-keyring.enable = true;  
+  programs.dconf.enable = true;
 
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {

@@ -63,6 +63,27 @@
     };
   };
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  xdg.portal = {
+      enable = true;
+      extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+      configPackages = with pkgs; [ xdg-desktop-portal-gtk ];
+  };
+
+  gtk = {
+    enable = true;
+    catppuccin = {
+      enable = true;
+      tweaks = [ "normal" ];
+    };
+  };
+
+
   qt = {
     style.name = "kvantum";
     platformTheme.name = "kvantum";

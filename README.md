@@ -47,3 +47,5 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [nerd fonts cheat sheet](https://www.nerdfonts.com/cheat-sheet)
 - [setting the default shell in nix](https://www.reddit.com/r/NixOS/comments/z16mt8/cant_seem_to_set_default_shell_using_homemanager/)
 - [hyprwm/contrib](https://github.com/hyprwm/contrib)
+- [gtk with home manager](https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/)
+- [setting up the proper portals](https://github.com/NixOS/nixpkgs/issues/274554)
