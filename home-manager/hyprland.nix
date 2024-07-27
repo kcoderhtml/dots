@@ -33,9 +33,13 @@
           on-timeout = "loginctl lock-session";
         }
         {
-          timeout = 105;
+          timeout = 90;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on";
+        }
+        {
+          timeout = 150;
+          on-timeout = "systemctl suspend";
         }
       ];
     };
