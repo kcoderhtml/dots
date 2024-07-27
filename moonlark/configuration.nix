@@ -214,6 +214,7 @@
       efiSupport = true;
       efiInstallAsRemovable = true;
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
