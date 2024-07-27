@@ -24,6 +24,8 @@
     
     # hpyrland config
     # ./hyprland
+
+    ./pam.nix
   ];
 	
   nixpkgs = {
@@ -94,9 +96,6 @@
       })
     pkgs.github-desktop
   ];
-
-  services.fprintd.enable = true;
-  security.pam.services.hyprlock.fprintAuth = true;
 
   services.gnome.gnome-keyring.enable = true;
 
