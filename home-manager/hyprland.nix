@@ -24,7 +24,7 @@
 
       listener = [
         {
-          timeout = 10;
+          timeout = 30;
           on-timeout = "kill $(pidof wluma); brightnessctl -s set 10";
           on-resume = "brightnessctl -r; wluma &";
         }
