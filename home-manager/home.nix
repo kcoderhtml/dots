@@ -140,7 +140,7 @@
       directory = {
         truncation_length = 1;
         truncation_symbol = "…/";
-        home_symbol = " ~";
+        home_symbol = "  ~";
         read_only_style = "197";
         read_only = "  ";
         format = "at [$path]($style)[$read_only]($read_only_style) ";
@@ -197,7 +197,6 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    #autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = {
