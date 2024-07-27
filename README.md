@@ -27,10 +27,7 @@ reboot
 14. Move the config to your local directory with `mkdir ~/etc; sudo mv /etc/nixos ~/etc`
 15. Link the config back to `/etc/nixos` with `sudo ln -s ~/etc/nixos /etc`
 16. Change the config permissions: `sudo chown -R $(id -un):users ~/etc/nixos`, `sudo chown kierank -R ~/etc/nixos`, and `sudo chown kierank -R ~/etc/nixos/.*`
-
-## Screenshots
-
-🫡 Will report back!
+17. Setup the fingerprint reader with `sudo fprintd-enroll -f right-index-finger kierank` and then verify it worked with `sudo fprintd-verify kierank` (you may need to swipe your finger across the fingerprint sensor instead of simply laying it there)
 
 ## Credits
 
