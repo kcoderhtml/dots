@@ -75,6 +75,7 @@ in {
         modules-center = [
           "cpu"
           "memory"
+          "disk"
           "clock"
           "pulseaudio"
           "battery"
@@ -108,6 +109,12 @@ in {
         memory = {
           format = "  {}%";
           interval = 5;
+        };
+
+        disk = {
+          interval = 5;
+          unit = "GB";
+          format = "󰋊 {percentage_used}%";
         };
 
         pulseaudio = {
