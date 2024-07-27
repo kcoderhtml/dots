@@ -303,7 +303,7 @@ in {
               awk '{print $2 " " $3}' |\
               # filter out the program path
               awk -F "/" '{print "{\"tooltip\": \"" $1 " " $NF "\"}"}' |\
-              jq -s 'if length > 0 then {text: "󰄀 ", tooltip: (map(.tooltip) | join("\r"))} else {text: "󱦿 ", tooltip: "No applications are using your webcam!"} end' |\
+              jq -s 'if length > 0 then {text: "󰄀 ", tooltip: (map(.tooltip) | join("\r"))} else {text: "", tooltip: ""} end' |\
               jq --unbuffered --compact-output
             '';
           };
