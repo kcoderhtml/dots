@@ -277,6 +277,10 @@
     ];
   };
 
+  programs.zoxide = {
+    enable = true;
+  }; 
+
   # alacritty
   programs.alacritty = {
     enable = true;
