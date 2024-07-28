@@ -76,6 +76,7 @@
     pkgs.brightnessctl
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     pkgs.mako
+    pkgs.hyprpicker
     pkgs.notify-desktop
     pkgs.bc
     pkgs.wl-clipboard
