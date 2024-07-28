@@ -38,7 +38,7 @@ reboot
     ![the github page of this repo](.github/images/github.png)
     ![nautilus file manager](.github/images/nautilus.png)
     ![neofetch](.github/images/neofetch.png)
-<details>
+</details>
 
 ## Credits
 
