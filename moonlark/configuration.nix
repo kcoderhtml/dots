@@ -91,15 +91,12 @@
     pkgs.polkit_gnome
     pkgs.fprintd
     pkgs.gitMinimal
-    (pkgs.vscode-with-extensions.override {
-        vscodeExtensions = with pkgs.vscode-extensions; [
-          bbenoist.nix
-        ];
-      })
     pkgs.github-desktop
     pkgs.udiskie
     pkgs.neofetch
     pkgs.cava
+    pkgs.go
+    pkgs.bun
   ];
 
   services.gnome.gnome-keyring.enable = true;  

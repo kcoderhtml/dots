@@ -365,6 +365,25 @@
     };
   };
 
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      bbenoist.nix
+      golang.go
+      catppuccin.catppuccin-vsc-icons
+      catppuccin.catppuccin-vsc
+    ];
+    userSettings = {
+      "editor.semanticHighlighting.enabled" = true;
+      "terminal.integrated.minimumContrastRatio" = 1;
+      "window.titleBarStyle" = "custom";
+
+      "gopls" = {
+        "ui.semanticTokens" = true;
+      };
+    };
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
