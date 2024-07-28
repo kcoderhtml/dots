@@ -242,7 +242,19 @@
       update = "sudo nixos-rebuild switch";
       gc = "git commit";
       gp = "git push";
+      rr = "rm -Rf";
+      ghrpc = "gh repo create -c";
     };
+    initExtra = ''
+      #ssh auto reconnect
+      assh() {
+          local host=$1
+          local port=$2
+        while true; do
+              ssh -p $port -o "BatchMode yes" $host || sleep 1
+          done
+      }
+    '';
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
