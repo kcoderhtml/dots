@@ -35,9 +35,9 @@ reboot
 <details>
     <summary>I've stuck the rest of the screenshots in a spoiler to preserve space</summary>
 
-    ![the github page of this repo](.github/images/github.png)
-    ![nautilus file manager](.github/images/nautilus.png)
-    ![neofetch](.github/images/neofetch.png)
+![the github page of this repo](.github/images/github.png)
+![nautilus file manager](.github/images/nautilus.png)
+![neofetch](.github/images/neofetch.png)
 </details>
 
 ## Credits
