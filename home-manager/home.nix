@@ -90,6 +90,22 @@
     enable = true;
   };
 
+  services.udiskie = {
+    enable = true;
+    settings = {
+      program_options = {
+        udisks_version = 2;
+        tray = false;
+      };
+      notifications = {
+        device_unmounted = false;
+        device_added = -1;
+        device_removed = -1;
+        device_mounted = -1;
+      };
+    };
+  };
+
   # git config
   programs.git = {
     enable = true;

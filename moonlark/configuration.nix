@@ -95,6 +95,7 @@
         ];
       })
     pkgs.github-desktop
+    pkgs.udiskie
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -203,6 +204,10 @@
       PasswordAuthentication = false;
     };
   };
+
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
 
   # Requires at least 5.16 for working wi-fi and bluetooth.
   # https://community.frame.work/t/using-the-ax210-with-linux-on-the-framework-laptop/1844/89
