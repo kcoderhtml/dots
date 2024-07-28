@@ -29,6 +29,11 @@ reboot
 16. Change the config permissions: `sudo chown -R $(id -un):users ~/etc/nixos`, `sudo chown kierank -R ~/etc/nixos`, and `sudo chown kierank -R ~/etc/nixos/.*`
 17. Setup the fingerprint reader with `sudo fprintd-enroll -f right-index-finger kierank` and then verify it worked with `sudo fprintd-verify kierank` (you may need to swipe your finger across the fingerprint sensor instead of simply laying it there)
 
+## Screenshots
+![the github page of this repo](.github/images/github.png)
+![nautilus file manager](.github/images/nautilus.png)
+![neofetch](.github/images/neofetch.png)
+
 ## Credits
 
 Thanks a bunch to the following people for their dots, configs, and general inspiration which i've shamelessly stolen from:

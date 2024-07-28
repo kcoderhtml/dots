@@ -96,6 +96,7 @@
       })
     pkgs.github-desktop
     pkgs.udiskie
+    pkgs.neofetch
   ];
 
   services.gnome.gnome-keyring.enable = true;  
