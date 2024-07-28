@@ -1,5 +1,7 @@
 # Kieran's Dots
 
+![spotify with cava next to it](.github/images/spotify.png)
+
 > [!CAUTION]
 > These dots are highly prone to change / breakage. I am not a nix os expert (this is my first time touching nix), so I'm not sure if this will work or not. I'm just trying to get my dots up on github. If you have any suggestions, please let me know.
 
@@ -30,9 +32,13 @@ reboot
 17. Setup the fingerprint reader with `sudo fprintd-enroll -f right-index-finger kierank` and then verify it worked with `sudo fprintd-verify kierank` (you may need to swipe your finger across the fingerprint sensor instead of simply laying it there)
 
 ## Screenshots
-![the github page of this repo](.github/images/github.png)
-![nautilus file manager](.github/images/nautilus.png)
-![neofetch](.github/images/neofetch.png)
+<details>
+    <summary>I've stuck the rest of the screenshots in a spoiler to preserve space</summary>
+
+    ![the github page of this repo](.github/images/github.png)
+    ![nautilus file manager](.github/images/nautilus.png)
+    ![neofetch](.github/images/neofetch.png)
+<details>
 
 ## Credits
 
