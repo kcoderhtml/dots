@@ -66,6 +66,7 @@
     pkgs.curl
     inputs.agenix.packages.x86_64-linux.default
     pkgs.wpa_supplicant_gui
+    pkgs.overskride
     pkgs.alacritty
     pkgs.zsh
     pkgs.starship

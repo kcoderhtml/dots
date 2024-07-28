@@ -86,6 +86,7 @@ in {
         modules-right = [
           # "custom/gammastep" TODO: currently broken for some reason
           "network"
+          "bluetooth"
           "tray"
           "privacy"
           "custom/webcam"
@@ -210,6 +211,15 @@ in {
             deps = [pkgs.wpa_supplicant pkgs.notify-desktop];
             script = ''wpa_cli reconnect; notify-desktop "reconnecting to wifi" -t 1200'';
           };
+        };
+
+        bluetooth = {
+          format-on = "󰂯";
+          format-off = "󰂲";
+          format-disabled = "󰂲";
+          format-connected = "󰂱 {num_connections}";
+          format-connected-battery = "󰂱 {device_alias} ({device_battery_percentage}%) ({num_connections})";
+          on-click = "overskride";
         };
 
         "custom/menu" = {
