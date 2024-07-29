@@ -102,6 +102,7 @@
     pkgs.cava
     pkgs.go
     pkgs.bun
+    pkgs.pitivi
   ];
 
   services.gnome.gnome-keyring.enable = true;  
