@@ -381,6 +381,13 @@
       "gopls" = {
         "ui.semanticTokens" = true;
       };
+      "workbench.colorTheme" = "Catppuccin Macchiato";
+      "workbench.iconTheme" = "catppuccin-macchiato";
+      "catppuccin.accentColor" = "blue";
+      "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace', monospace";
+      "git.autofetch" = true;
+      "git.confirmSync" = false;
+      "github.copilot.editor.enableAutoCompletions" = false;
     };
   };
 
