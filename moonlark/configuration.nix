@@ -222,6 +222,7 @@
   services.logind.extraConfig = ''
     # don't shutdown when power button is short-pressed
     HandlePowerKey=ignore
+    HandlePowerKeyLongPress=poweroff
   '';
 
   # Requires at least 5.16 for working wi-fi and bluetooth.
