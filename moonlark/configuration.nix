@@ -26,6 +26,9 @@
     # ./hyprland
 
     ./pam.nix
+
+    # tuigreet
+    ./greetd.nix
   ];
 	
   nixpkgs = {

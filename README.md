@@ -60,3 +60,4 @@ Thanks a bunch to the following people for their dots, configs, and general insp
 - [hyprwm/contrib](https://github.com/hyprwm/contrib)
 - [gtk with home manager](https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/)
 - [setting up the proper portals](https://github.com/NixOS/nixpkgs/issues/274554)
+- [tuigreet setup](https://github.com/sjcobb2022/nixos-config/blob/29077cee1fc82c5296908f0594e28276dacbe0b0/hosts/common/optional/greetd.nix)
