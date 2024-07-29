@@ -90,6 +90,8 @@
     pkgs.firefox
     pkgs.slack
     pkgs.gnome.nautilus
+    pkgs.gnome.totem
+    pkgs.loupe
     pkgs.gnome.file-roller
     pkgs.polkit_gnome
     pkgs.fprintd
