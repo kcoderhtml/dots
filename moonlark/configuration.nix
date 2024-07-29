@@ -177,6 +177,12 @@
   
   # enable cups
   services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
 
   # enable bluetooth
   hardware.bluetooth.enable = true;
