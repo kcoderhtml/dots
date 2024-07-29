@@ -7,7 +7,7 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${tuigreet} --time --remember --cmd Hyprland";
+        command = "${tuigreet} --time -g 'WARNING: UNAUTHORIZED ACCESS WILL RESULT IN TERMINATION OF SESSION. IDENTIFY YOURSELF' --remember --cmd Hyprland";
         user = "greeter";
       };
     };
