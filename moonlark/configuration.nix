@@ -216,6 +216,11 @@
   services.gvfs.enable = true; 
   services.udisks2.enable = true;
 
+  services.logind.extraConfig = ''
+    # don't shutdown when power button is short-pressed
+    HandlePowerKey=ignore
+  '';
+
   # Requires at least 5.16 for working wi-fi and bluetooth.
   # https://community.frame.work/t/using-the-ax210-with-linux-on-the-framework-laptop/1844/89
   boot = {
