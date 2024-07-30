@@ -371,6 +371,8 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-marketplace; [
+      ms-vscode.live-server
+      formulahendry.auto-complete-tag
       edwinkofler.vscode-assorted-languages
       golang.go
       catppuccin.catppuccin-vsc-icons
