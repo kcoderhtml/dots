@@ -67,6 +67,7 @@
 
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
+    pkgs.wget
     inputs.agenix.packages.x86_64-linux.default
     pkgs.wpa_supplicant_gui
     pkgs.overskride
