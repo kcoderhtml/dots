@@ -30,6 +30,9 @@
   ];
 
   nixpkgs = {
+    overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+    ];
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages
@@ -367,11 +370,16 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
+    extensions = with pkgs.vscode-marketplace; [
+      edwinkofler.vscode-assorted-languages
       golang.go
       catppuccin.catppuccin-vsc-icons
       catppuccin.catppuccin-vsc
+      eamodio.gitlens
+      yzhang.markdown-all-in-one
+      github.vscode-github-actions
+      yoavbls.pretty-ts-errors
+      esbenp.prettier-vscode
     ];
     userSettings = {
       "editor.semanticHighlighting.enabled" = true;

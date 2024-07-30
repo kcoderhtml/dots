@@ -31,6 +31,8 @@
 
     # catppuccin
     catppuccin.url = "github:catppuccin/nix";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
 
   outputs = {
