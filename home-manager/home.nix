@@ -373,7 +373,6 @@
     extensions = with pkgs.vscode-marketplace; [
       ms-vscode.live-server
       formulahendry.auto-rename-tag
-      formulahendry.auto-close-tag
       edwinkofler.vscode-assorted-languages
       golang.go
       catppuccin.catppuccin-vsc-icons
