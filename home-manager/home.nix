@@ -387,6 +387,7 @@
       vsciot-vscode.vscode-arduino
       ms-vscode.cpptools
       ms-vscode.vscode-serial-monitor
+      prisma.prisma
     ];
     userSettings = {
       "editor.semanticHighlighting.enabled" = true;

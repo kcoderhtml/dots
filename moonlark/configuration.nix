@@ -111,8 +111,9 @@
     pkgs.unstable.arduino-cli
     pkgs.lazygit
     pkgs.vhs
-    pkgs.davinci-resolve
+    pkgs.lightworks
     pkgs.ffmpeg
+    pkgs.ngrok
   ];
 
   services.gnome.gnome-keyring.enable = true;  
