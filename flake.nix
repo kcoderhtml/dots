@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # NixOS hardware configuration
     hardware.url = "github:NixOS/nixos-hardware/master";
@@ -38,6 +39,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     agenix,
     home-manager,
     nixos-hardware,
@@ -45,19 +47,33 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+    system = "x86_64-linux";
+    unstable-overlays = {
+      nixpkgs.overlays = [
+        (final: prev: {
+          unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        })
+      ];
+    };
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       moonlark = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+
         specialArgs = {inherit inputs outputs;};
+
         # > Our main nixos configuration file <
         modules = [
           inputs.disko.nixosModules.disko
           { disko.devices.disk.disk1.device = "/dev/vda"; }
           agenix.nixosModules.default
           ./moonlark/configuration.nix
+          unstable-overlays
         ];
       };
     };

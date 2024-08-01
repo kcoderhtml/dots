@@ -382,6 +382,9 @@
       github.vscode-github-actions
       yoavbls.pretty-ts-errors
       esbenp.prettier-vscode
+      vsciot-vscode.vscode-arduino
+      ms-vscode.cpptools
+      ms-vscode.vscode-serial-monitor
     ];
     userSettings = {
       "editor.semanticHighlighting.enabled" = true;
@@ -398,6 +401,10 @@
       "git.autofetch" = true;
       "git.confirmSync" = false;
       "github.copilot.editor.enableAutoCompletions" = false;
+
+      "[json]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
     };
   };
 

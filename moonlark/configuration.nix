@@ -6,6 +6,7 @@
   lib,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   # You can import other NixOS modules here
@@ -75,6 +76,7 @@
     pkgs.alacritty
     pkgs.zsh
     pkgs.starship
+    pkgs.gh
     pkgs.swww
     pkgs.sunwait
     pkgs.sunpaper
@@ -105,6 +107,8 @@
     pkgs.go
     pkgs.bun
     pkgs.pitivi
+    pkgs.unstable.arduino-ide
+    pkgs.unstable.arduino-cli
   ];
 
   services.gnome.gnome-keyring.enable = true;  
