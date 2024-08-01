@@ -189,6 +189,7 @@ in {
             "title<.*youtube.*>" = "";
             "title<\*Gmail*>" = "󰊫";
             "class<firefox>" = "";
+            "class<com.obsproject.Studio>" = "";
             "alacritty" = "";
             "code" = "󰨞";
             "slack" = "󰒱";
@@ -199,7 +200,8 @@ in {
 
         network = {
           interval = 3;
-          format-wifi = "    {essid}";
+          format-wifi = "{icon}   {essid}";
+          format-icons = [ "󰤟" "󰤢" "󰤥" "󰤨" ];
           format-ethernet = "󰈁 Connected";
           format-disconnected = "󱐤 ";
           tooltip-format = ''
