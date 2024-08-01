@@ -110,6 +110,9 @@
     pkgs.unstable.arduino-ide
     pkgs.unstable.arduino-cli
     pkgs.lazygit
+    pkgs.vhs
+    pkgs.davinci-resolve
+    pkgs.ffmpeg
   ];
 
   services.gnome.gnome-keyring.enable = true;  

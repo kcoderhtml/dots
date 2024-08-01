@@ -6,6 +6,7 @@
     extraPackages = with pkgs; [
       # LazyVim
       lua-language-server
+      gopls
       stylua
       # Telescope
       ripgrep
