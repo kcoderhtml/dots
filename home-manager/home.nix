@@ -27,6 +27,8 @@
     # ./hyprland
 
     ./waybar.nix
+
+    ./neovim.nix
   ];
 
   nixpkgs = {
@@ -416,7 +418,6 @@
       obs-pipewire-audio-capture
     ];
   };
-
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

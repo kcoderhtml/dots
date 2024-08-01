@@ -109,6 +109,7 @@
     pkgs.pitivi
     pkgs.unstable.arduino-ide
     pkgs.unstable.arduino-cli
+    pkgs.lazygit
   ];
 
   services.gnome.gnome-keyring.enable = true;  
