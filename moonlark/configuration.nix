@@ -96,6 +96,7 @@
     pkgs.gnome.nautilus
     pkgs.gnome.totem
     pkgs.loupe
+    pkgs.gnome.simple-scan
     pkgs.gnome.file-roller
     pkgs.polkit_gnome
     pkgs.fprintd
@@ -105,7 +106,7 @@
     pkgs.neofetch
     pkgs.cava
     pkgs.go
-    pkgs.bun
+    pkgs.unstable.bun
     pkgs.pitivi
     pkgs.unstable.arduino-ide
     pkgs.unstable.arduino-cli
@@ -114,6 +115,9 @@
     pkgs.lightworks
     pkgs.ffmpeg
     pkgs.ngrok
+    pkgs.openssl
+    pkgs.unstable.nodePackages_latest.prisma
+    pkgs.nodejs_22
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -147,6 +151,9 @@
     SUNPAPERDIR = "${lib.getExe pkgs.sunpaper}";
     XDG_STATE_HOME  = "$HOME/.local/state";
     NIXOS_OZONE_WL = "1";
+    PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
+    PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
+    PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
   };
 
   # import the secret

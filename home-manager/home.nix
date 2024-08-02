@@ -388,6 +388,7 @@
       ms-vscode.cpptools
       ms-vscode.vscode-serial-monitor
       prisma.prisma
+      ms-azuretools.vscode-docker
     ];
     userSettings = {
       "editor.semanticHighlighting.enabled" = true;
