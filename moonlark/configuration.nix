@@ -122,6 +122,7 @@
     pkgs.pop
     pkgs.gum
     pkgs.unstable.netlify-cli
+    pkgs.unstable.kicad
   ];
 
   services.gnome.gnome-keyring.enable = true;  
