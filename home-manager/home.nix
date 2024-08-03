@@ -392,6 +392,7 @@
       astro-build.astro-vscode
       github.copilot
       github.copilot-chat
+      dotjoshjohnson.xml
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
