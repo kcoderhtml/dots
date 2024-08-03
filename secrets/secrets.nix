@@ -7,4 +7,5 @@ let
 in
 {
   "wifi.age".publicKeys = [ kierank moonlark ];
+  "resend.age".publicKeys = [ kierank moonlark ];
 }

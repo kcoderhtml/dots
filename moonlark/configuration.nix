@@ -118,6 +118,10 @@
     pkgs.openssl
     pkgs.unstable.nodePackages_latest.prisma
     pkgs.nodejs_22
+    pkgs.invoice
+    pkgs.pop
+    pkgs.gum
+    pkgs.unstable.netlify-cli
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -144,6 +148,19 @@
     fira
   ];
 
+  # import the secret
+  age.identityPaths = [ "/home/kierank/.ssh/id_rsa" "/etc/ssh/id_rsa" "/mnt/etc/ssh/id_rsa" ];
+  age.secrets = {
+    wifi = {
+      file = ../secrets/wifi.age;
+      owner = "kierank";
+    };
+    resend = {
+      file = ../secrets/resend.age;
+      owner = "kierank";
+    };
+  };
+
   environment.sessionVariables = {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
@@ -154,13 +171,8 @@
     PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
     PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
     PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
-  };
-
-  # import the secret
-  age.identityPaths = [ "/home/kierank/.ssh/id_rsa" "/etc/ssh/id_rsa" "/mnt/etc/ssh/id_rsa" ];
-  age.secrets.wifi = {
-    file = ../secrets/wifi.age;
-    owner = "kierank";
+    RESEND_API_KEY = ''$(${pkgs.coreutils}/bin/cat ${config.age.secrets.resend.path})'';
+    POP_FROM = "me@dunkirk.sh";
   };
 
   # setup the network
