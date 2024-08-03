@@ -34,6 +34,7 @@
   nixpkgs = {
     overlays = [
       inputs.nix-vscode-extensions.overlays.default
+      inputs.catppuccin-vsc.overlays.default
     ];
     # Configure your nixpkgs instance
     config = {
@@ -378,7 +379,6 @@
       edwinkofler.vscode-assorted-languages
       golang.go
       catppuccin.catppuccin-vsc-icons
-      catppuccin.catppuccin-vsc
       eamodio.gitlens
       yzhang.markdown-all-in-one
       github.vscode-github-actions
@@ -389,7 +389,14 @@
       ms-vscode.vscode-serial-monitor
       prisma.prisma
       ms-azuretools.vscode-docker
-    ];
+      astro-build.astro-vscode
+      github.copilot
+      github.copilot-chat
+    ]
+    ++ [(pkgs.catppuccin-vsc.override {
+      accent = "blue";
+    })];
+
     userSettings = {
       "editor.semanticHighlighting.enabled" = true;
       "terminal.integrated.minimumContrastRatio" = 1;
@@ -405,8 +412,13 @@
       "git.autofetch" = true;
       "git.confirmSync" = false;
       "github.copilot.editor.enableAutoCompletions" = false;
+      
+      "editor.formatOnSave" = true;
 
       "[json]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
     };

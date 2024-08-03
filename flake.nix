@@ -32,6 +32,7 @@
 
     # catppuccin
     catppuccin.url = "github:catppuccin/nix";
+    catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/\*.tar.gz";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
