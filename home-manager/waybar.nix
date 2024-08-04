@@ -187,14 +187,16 @@ in {
           window-rewrite = {
             "title<.*github.*>" = "󰊤";
             "title<.*youtube.*>" = "";
-            "title<\*Gmail*>" = "󰊫";
+            "title<*Gmail*>" = "󰊫";
             "class<firefox>" = "";
             "class<com.obsproject.Studio>" = "";
+            "title<OBS*>" = "";
             "alacritty" = "";
             "code" = "󰨞";
             "slack" = "󰒱";
             "initialtitle<Spotify*>" = "󰓇";
             "class<org.gnome.Nautilus>" = "󰉓";
+            "class<kicad>" = "";
           };
         };
 

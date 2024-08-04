@@ -393,6 +393,8 @@
       github.copilot
       github.copilot-chat
       dotjoshjohnson.xml
+      johnpapa.vscode-cloak
+      mikestead.dotenv
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
