@@ -1,6 +1,6 @@
 { self, config, lib, pkgs, inputs, ... }: {
   imports = [
-    inputs.hyprland-nix.homeManagerModules.hyprland
+    inputs.hyprnix.homeManagerModules.hyprland
     # inputs.hyprland-nix.homeManagerModules.xdg-desktop-portals
     #./config.nix
     #./windowrules.nix
@@ -14,6 +14,8 @@
     reloadConfig = true;
     systemdIntegration = true;
     recommendedEnvironment = true;
+
+    fufexan.enable = true;
 
     xwayland.enable = true;
 

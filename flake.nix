@@ -14,7 +14,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # hyprland nix
-    Hyprnix.url = "github:hyprland-community/hyprnix";
+    hyprnix.url = "github:hyprland-community/hyprnix/rewrite";
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
     };

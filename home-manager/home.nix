@@ -23,8 +23,8 @@
 
     # inputs.Hyprnix.homeManagerModules.hyprland
 
-    ./hyprland.nix
-    # ./hyprland
+    # ./hyprland.nix
+    ./hyprland
 
     ./waybar.nix
 
