@@ -428,11 +428,11 @@
         "xdg-desktop-portal-hyprland": "xdg-desktop-portal-hyprland"
       },
       "locked": {
-        "lastModified": 1722755850,
-        "narHash": "sha256-bytmULE2cKdCb+FSPqUgbzorkG2aXc8Hvena29Hcj5Q=",
+        "lastModified": 1722829543,
+        "narHash": "sha256-fUY2Z3GsiS2ID9LLiB7sCarkdlTjLVzORg+RItuqSOs=",
         "owner": "hyprland-community",
         "repo": "hyprnix",
-        "rev": "0cd31585bdbc76f95733d259aca8c1a1c6d059d0",
+        "rev": "c061b6086210e635a906837947ccd5bbfce50c28",
         "type": "github"
       },
       "original": {
