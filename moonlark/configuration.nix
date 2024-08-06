@@ -166,7 +166,6 @@
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME   = "$HOME/.local/share";
-    SUNPAPERDIR = "${lib.getExe pkgs.sunpaper}";
     XDG_STATE_HOME  = "$HOME/.local/state";
     NIXOS_OZONE_WL = "1";
     PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";

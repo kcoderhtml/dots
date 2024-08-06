@@ -13,7 +13,7 @@
 # Apple: The-Beach The-Cliffs The-Lake The-Desert
 # Louis Coyle: Lakeside
 #
-wallpaperPath="$SUNPAPERDIR/share/images/Lakeside"
+wallpaperPath="/home/kierank/.config/sunpaper/images/Lakeside"
 
 #################################################
 # Animate transitions with SWWW MODE 
