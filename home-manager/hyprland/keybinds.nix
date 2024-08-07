@@ -11,29 +11,6 @@
     MOUSE_EX1 = "mouse:275";
     MOUSE_EX2 = "mouse:276";
 
-    exec = {
-      screenshotWindow = pkgs.patchShellScript ./scripts/screenshot.sh {
-        runtimeInputs = with pkgs; [
-          jq
-          grim
-          wl-clipboard
-          libnotify
-          config.wayland.windowManager.hyprland.package
-        ];
-      };
-      playerctl = lib.getExe pkgs.playerctl;
-      slight = lib.getExe pkgs.slight;
-      osdFunc = lib.getExe config.utilities.osd-functions.package;
-      airplaneMode = "sudo /run/current-system/sw/bin/airplane-mode";
-      toggleGroupOrLock =
-        pkgs.patchShellScript ./scripts/toggle-group-or-lock.sh {
-          runtimeInputs = with pkgs; [
-            jq
-            config.wayland.windowManager.hyprland.package
-          ];
-        };
-    };
-
     # Collections of keybinds common across multiple submaps are collected into
     # groups, which can be merged together granularly.
     groups = {
@@ -47,7 +24,7 @@
       launchPrograms = {
         # Launch the program with a shortcut.
         bind."SUPER, E" = "exec, dolphin";
-        bind."SUPER, Enter" = "exec, alacritty";
+        bind."SUPER, Enter" = "exec, foot";
       };
 
       # Kill the active window.
@@ -217,9 +194,6 @@
       # Forcefully kill a program after selecting its window with the mouse.
       bind."SUPER_SHIFT, Q" = "exec, hyprctl kill";
 
-      # Screenshot the currently focused window and copy to clipboard.
-      bind."SUPER, print" = "exec, ${exec.screenshotWindow}";
-
       # Select a region and take a screenshot, saving to the clipboard.
       bind."SUPER_SHIFT, print" = "exec, prtsc -c -m r -D -b 00000066";
 
@@ -235,37 +209,6 @@
       bind."SUPER, Space" = "exec, rofi -show drun -show-icons";
       # Open Rofi to run a command.
       bind."SUPER, R" = "exec, rofi -show run";
-    }
-    ### FUNCTION KEYS ###
-    {
-      # The names of these keys can be found at:
-      # <https://github.com/xkbcommon/libxkbcommon/blob/master/include/xkbcommon/xkbcommon-keysyms.h>
-
-      bindl."SHIFT, XF86WLAN" = "exec, ${exec.airplaneMode}";
-
-      # Mute/unmute the active audio output.
-      bindl.", XF86AudioMute" = "exec, ${exec.osdFunc} output mute";
-
-      # Raise and lower the volume of the active audio output.
-      bindel.", XF86AudioRaiseVolume" = "exec, ${exec.osdFunc} output +0.05";
-      bindel.", XF86AudioLowerVolume" = "exec, ${exec.osdFunc} output -0.05";
-
-      # Mute the active microphone or audio source.
-      bindl.", XF86AudioMicMute" = "exec, ${exec.osdFunc} input mute";
-
-      # Raise and lower display brightness.
-      bindel.", XF86MonBrightnessUp" = "exec, ${exec.slight} inc 10 -t 300ms";
-      bindel.", XF86MonBrightnessDown" = "exec, ${exec.slight} dec 10 -t 300ms";
-
-      # Regular media control keys, if your laptop or bluetooth device has them.
-      bindl.", XF86AudioPlay" = "exec, ${exec.playerctl} play-pause";
-      bindl.", XF86AudioPrev" = "exec, ${exec.playerctl} previous";
-      bindl.", XF86AudioNext" = "exec, ${exec.playerctl} next";
-
-      # Poor-man's media player control keys.
-      bindl."SUPER, slash" = "exec, ${exec.playerctl} play-pause";
-      bindl."SUPER, comma" = "exec, ${exec.playerctl} previous";
-      bindl."SUPER, period" = "exec, ${exec.playerctl} next";
     }
     ### WINDOW FOCUS & MOVEMENT ###
     groups.moveFocusOrWindow

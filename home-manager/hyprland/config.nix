@@ -1,20 +1,11 @@
 { lib, ... }:
-let
-  inherit (lib.birdos.colors) grayRGB;
-  hyprRGBA = rgb: a: "rgba(${lib.birdos.colors.hexRGBA rgb a})";
-  gb = (lib.birdos.colors.formats.custom hyprRGBA).gruvbox.dark;
-  shadow = hyprRGBA (grayRGB 6.0e-2); # 6% of each channel
-in {
+{
   wayland.windowManager.hyprland = {
     # <https://wiki.hyprland.org/Configuring/Variables/#general>
     config.general = {
       border_size = 2;
       gaps_inside = 5;
       gaps_outside = 10;
-      active_border_color = gb.fg3 1.0;
-      inactive_border_color = gb.bg3 1.0;
-      cursor_inactive_timeout = 10;
-      no_cursor_warps = true;
       resize_on_border = true;
       extend_border_grab_area = 10;
     };
@@ -24,8 +15,6 @@ in {
       rounding = 0;
       shadow_range = 8;
       shadow_render_power = 2;
-      active_shadow_color = shadow 0.9;
-      inactive_shadow_color = shadow 0.6;
       blur = {
         size = 3; # 8
         passes = 2; # 1
@@ -44,6 +33,9 @@ in {
     in {
       follow_mouse = LOOSE;
       float_switch_override_focus = DISABLED;
+      touchpad = {
+        natural_scroll = true;
+      };
     };
 
     # <https://wiki.hyprland.org/Configuring/Variables/#binds>
@@ -83,11 +75,6 @@ in {
       insert_after_current = true;
       focus_removed_window = true;
 
-      active_border_color = gb.hl_yellow 1.0;
-      inactive_border_color = gb.bg3 1.0;
-      locked_active_border_color = gb.hl_blue 1.0;
-      locked_inactive_border_color = gb.bg3 1.0;
-
       # These features are not polished yet:
       # <https://github.com/hyprwm/Hyprland/issues/2415>
       # @MightyPlaza is working on this, but not doing it how we expect.
@@ -97,12 +84,6 @@ in {
         gradients = false;
         render_titles = true;
         scrolling = true;
-        text_color = gb.fg0 1.0;
-
-        active_color = gb.fg3 1.0;
-        inactive_color = gb.bg1 0.6;
-        locked_active_color = active_color;
-        locked_inactive_color = inactive_color;
       };
     };
 
@@ -115,44 +96,5 @@ in {
     };
 
     # <https://wiki.hyprland.org/Configuring/Animations/#curves>
-    animations.animation = {
-      # window creation
-      windowsIn = {
-        enable = true;
-        duration = 200;
-        curve = "easeOutCirc";
-        style = "popin 60%";
-      };
-      fadeIn = {
-        enable = true;
-        duration = 100;
-        curve = "easeOutCirc";
-      };
-      # window destruction
-      windowsOut = {
-        enable = true;
-        duration = 200;
-        curve = "easeOutCirc";
-        style = "popin 60%";
-      };
-      fadeOut = {
-        enable = true;
-        duration = 100;
-        curve = "easeOutCirc";
-      };
-      # window movement
-      windowsMove = {
-        enable = true;
-        duration = 300;
-        curve = "easeInOutCubic";
-        style = "popin";
-      };
-      workspaces = {
-        enable = true;
-        duration = 200;
-        curve = "easeOutCirc";
-        style = "slide";
-      };
-    };
   };
 }
