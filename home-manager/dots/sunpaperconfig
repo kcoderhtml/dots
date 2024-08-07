@@ -41,5 +41,5 @@ swww_enable="true"
 #
 # swww_fps <1 to 255>
 # swww_step <1 to 255>
-swww_fps="4"
+swww_fps="24"
 swww_step="1"
