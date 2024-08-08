@@ -10,6 +10,7 @@
     ../../app/neovim.nix
     ../../app/git.nix
     ../../app/foot.nix
+    ../../app/spotify.nix
   ];
 
   nixpkgs = {
