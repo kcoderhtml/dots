@@ -5,14 +5,6 @@
   pkgs,
   ...
 }: {
-  xdg.configFile."sunpaper/config".source = ./dots/sunpaperconfig;
-  xdg.configFile."sunpaper/images/".source = "${pkgs.sunpaper}/share/sunpaper/images";
-  xdg.configFile."hypr/hyprland.conf".source = ./dots/hyprland.conf;
-  xdg.configFile."hypr/hyprlock.conf".source = ./dots/hyprlock.conf;
-  xdg.configFile."hypr/macchiato.conf".source = ./dots/macchiato.conf;
-  xdg.configFile."face.png".source = ./dots/face.png;
-
-  programs.hyprlock.enable = true;
   services.hypridle = {
     enable =  true;
     settings= {
