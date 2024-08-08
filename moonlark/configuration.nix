@@ -123,6 +123,7 @@
     pkgs.gum
     pkgs.unstable.netlify-cli
     pkgs.unstable.kicad
+    pkgs.unstable.mitmproxy
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -250,8 +251,8 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 4455 ];
-    allowedUDPPorts = [ 4455 ];
+    allowedTCPPorts = [ 4455 51820 ];
+    allowedUDPPorts = [ 4455 51820 ];
   };
 
 
