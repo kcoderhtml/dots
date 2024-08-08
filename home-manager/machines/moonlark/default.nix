@@ -12,6 +12,7 @@
     ../../app/foot.nix
     ../../app/spotify.nix
     ../../app/tofi.nix
+    ../../vscode.nix
   ];
 
   nixpkgs = {
