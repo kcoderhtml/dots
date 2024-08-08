@@ -11,6 +11,7 @@
     ../../app/git.nix
     ../../app/foot.nix
     ../../app/spotify.nix
+    ../../app/tofi.nix
   ];
 
   nixpkgs = {
