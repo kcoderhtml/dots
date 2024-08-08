@@ -1,5 +1,8 @@
 { self, config, lib, pkgs, inputs, ... }: {
   imports = [
+    # inputs
+    inputs.catppuccin.homeManagerModules.catppuccin
+
     # window manager
     ../../wm/hyprland
 

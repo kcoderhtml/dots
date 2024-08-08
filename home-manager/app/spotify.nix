@@ -5,6 +5,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+  ];
+  
   # spotify config
   programs.spicetify =
     let
