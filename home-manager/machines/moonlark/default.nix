@@ -75,4 +75,34 @@
     platformTheme.name = "kvantum";
     enable = true;
   };
+
+  ############
+  # services #
+  ############
+
+  # auto disk mounting
+  services.udiskie = {
+    enable = true;
+    settings = {
+      program_options = {
+        udisks_version = 2;
+        tray = false;
+      };
+      notifications = {
+        device_unmounted = false;
+        device_added = -1;
+        device_removed = -1;
+        device_mounted = -1;
+      };
+    };
+  };
+
+  # notifications
+  services.mako = {
+    enable = true;
+    defaultTimeout = 4000;
+    margin = "58,6";
+    font = "Fira Sans 12";
+    borderRadius = 5;
+  };
 }
