@@ -22,9 +22,6 @@
 
     # Import disko's configuration
     ./disk-config.nix
-    
-    # hpyrland config
-    # ./hyprland
 
     ./pam.nix
 
