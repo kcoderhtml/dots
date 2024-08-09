@@ -189,12 +189,12 @@ in {
             "title<.*youtube.*>" = "";
             "title<*Gmail*>" = "󰊫";
             "class<firefox>" = "";
-            "class<com.obsproject.Studio>" = "";
-            "title<OBS*>" = "";
+            "obs" = "";
             "alacritty" = "";
+            "foot" = "";
             "code" = "󰨞";
             "slack" = "󰒱";
-            "initialtitle<Spotify*>" = "󰓇";
+            "spotify" = "󰓇";
             "class<org.gnome.Nautilus>" = "󰉓";
             "class<kicad>" = "";
           };

@@ -121,6 +121,7 @@
     pkgs.unstable.netlify-cli
     pkgs.unstable.kicad
     pkgs.unstable.mitmproxy
+    pkgs.glow
   ];
 
   services.gnome.gnome-keyring.enable = true;  
