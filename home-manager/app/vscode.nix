@@ -30,6 +30,7 @@
       dotjoshjohnson.xml
       johnpapa.vscode-cloak
       mikestead.dotenv
+      bradlc.vscode-tailwindcss
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
@@ -57,6 +58,9 @@
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "[javascript]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
     };
