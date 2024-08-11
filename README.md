@@ -5,6 +5,23 @@
 > [!CAUTION]
 > These dots are highly prone to change / breakage. I am not a nix os expert (this is my first time touching nix), so I'm not sure if this will work or not. I'm just trying to get my dots up on github. If you have any suggestions, please let me know.
 
+## The layout
+
+```bash
+/etc/nixos
+├── home-manager - all the config's that use home manager and stored centraly here
+│   ├── app - any apps that have home manager configs like neovim get a file here
+│   ├── dots - any config files that need to be symlinked go here eg my hyprland config
+│   ├── machines - the different machines by hostname
+│   │   └── moonlark - my framework laptop
+│   └── wm - window manager config; honestly it could probly be moved to app/hyprland
+│       └── hyprland - hyprland config
+├── moonlark - the files pertaining to my moonlark machine that aren't home manager related
+└── secrets - any secrets that are encrypted with agenix go here
+
+10 directories
+```
+
 ## Installation
 
 ~~I have absolutely no idea~~ I kinda understand now?
