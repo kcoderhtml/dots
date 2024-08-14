@@ -122,6 +122,9 @@
     pkgs.unstable.kicad
     pkgs.unstable.mitmproxy
     pkgs.glow
+    pkgs.gnome.geary
+    pkgs.gnome-online-accounts
+    pkgs.gnome-online-accounts-gtk
   ];
 
   services.gnome.gnome-keyring.enable = true;  
