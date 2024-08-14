@@ -125,6 +125,7 @@
     pkgs.gnome.geary
     pkgs.gnome-online-accounts
     pkgs.gnome-online-accounts-gtk
+    pkgs.zoom-us
   ];
 
   services.gnome.gnome-keyring.enable = true;  
