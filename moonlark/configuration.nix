@@ -109,7 +109,7 @@
     pkgs.unstable.arduino-cli
     pkgs.lazygit
     pkgs.vhs
-    pkgs.lightworks
+    pkgs.video-trimmer
     pkgs.ffmpeg
     pkgs.ngrok
     pkgs.openssl
