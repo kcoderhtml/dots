@@ -32,8 +32,6 @@
       mikestead.dotenv
       bradlc.vscode-tailwindcss
       mechatroner.rainbow-csv
-      platformio.platformio-ide
-      trunk.io
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
@@ -71,8 +69,6 @@
       };
 
       "editor.linkedEditing" = true;
-
-      "platformio-ide.useBuiltinPIOCore" = false;
     };
   };
 }
