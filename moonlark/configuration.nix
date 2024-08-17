@@ -127,6 +127,8 @@
     pkgs.gnome-online-accounts-gtk
     pkgs.zoom-us
     pkgs.mods
+    pkgs.chromium
+    pkgs.python3
   ];
 
   services.gnome.gnome-keyring.enable = true;  
