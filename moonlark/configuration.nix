@@ -129,6 +129,7 @@
     pkgs.mods
     pkgs.chromium
     pkgs.python3
+    pkgs.platformio
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -271,6 +272,11 @@
   services.devmon.enable = true;
   services.gvfs.enable = true; 
   services.udisks2.enable = true;
+
+  services.udev.packages = [ 
+    pkgs.platformio-core
+    pkgs.openocd
+  ];
 
   services.logind.extraConfig = ''
     # don't shutdown when power button is short-pressed
