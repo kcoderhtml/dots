@@ -113,7 +113,7 @@
     pkgs.ffmpeg
     pkgs.ngrok
     pkgs.openssl
-    pkgs.unstable.nodePackages_latest.prisma
+    pkgs.nodePackages_latest.prisma
     pkgs.nodejs_22
     pkgs.invoice
     pkgs.pop
@@ -129,6 +129,7 @@
     pkgs.mods
     pkgs.chromium
     pkgs.python3
+    pkgs.qflipper
   ];
 
   services.gnome.gnome-keyring.enable = true;  

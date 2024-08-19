@@ -35,7 +35,7 @@
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
-    })];
+    })]; 
 
     userSettings = {
       "editor.semanticHighlighting.enabled" = true;
