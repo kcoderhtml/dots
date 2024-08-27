@@ -132,6 +132,11 @@
     pkgs.qflipper
     pkgs.inkscape
   ];
+  
+  services.flatpak.enable = true;
+  services.flatpak.packages = [
+    "io.github.zen_browser.zen"
+  ];
 
   services.gnome.gnome-keyring.enable = true;  
   programs.dconf.enable = true;
