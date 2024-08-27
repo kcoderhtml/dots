@@ -130,6 +130,7 @@
     pkgs.chromium
     pkgs.python3
     pkgs.qflipper
+    pkgs.inkscape
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -154,6 +155,7 @@
   fonts.packages = with pkgs; [
     nerdfonts
     fira
+    comic-neue
   ];
 
   # import the secret

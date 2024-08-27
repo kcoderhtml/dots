@@ -29,12 +29,15 @@
     catppuccin-vsc.url = "https://flakehub.com/f/catppuccin/vscode/\*.tar.gz";
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs = {
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nix-flatpak,
     agenix,
     home-manager,
     nixos-hardware,
@@ -64,6 +67,7 @@
 
         # > Our main nixos configuration file <
         modules = [
+          nix-flatpak.nixosModules.nix-flatpak
           inputs.disko.nixosModules.disko
           { disko.devices.disk.disk1.device = "/dev/vda"; }
           agenix.nixosModules.default
