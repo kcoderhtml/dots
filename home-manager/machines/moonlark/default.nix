@@ -17,6 +17,7 @@
     ../../app/tofi.nix
     ../../app/vscode.nix
     ../../app/obs.nix
+    ../../app/firefox.nix
   ];
 
   nixpkgs = {
