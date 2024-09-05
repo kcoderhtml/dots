@@ -1,4 +1,5 @@
 
+
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
@@ -133,11 +134,6 @@
     pkgs.inkscape
   ];
   
-  services.flatpak.enable = true;
-  services.flatpak.packages = [
-    "io.github.zen_browser.zen"
-  ];
-
   services.gnome.gnome-keyring.enable = true;  
   programs.dconf.enable = true;
 
@@ -192,6 +188,7 @@
   # setup the network
   networking = {
     hostName = "moonlark";
+    nameservers = [ "1.1.1.1" "9.9.9.9" ];
     wireless = {
       environmentFile = config.age.secrets.wifi.path;
       userControlled.enable = true;
