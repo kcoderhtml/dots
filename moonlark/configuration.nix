@@ -231,7 +231,7 @@
 
   virtualisation.docker.enable = true;
   
-  services.udev.packages = [ pkgs.qFlipper ];
+  services.udev.packages = [ pkgs.qFlipper pkgs.via ];
   
   # enable cups
   services.printing.enable = true;
