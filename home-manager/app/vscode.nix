@@ -32,6 +32,7 @@
       mikestead.dotenv
       bradlc.vscode-tailwindcss
       mechatroner.rainbow-csv
+      wakatime.vscode-wakatime
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";

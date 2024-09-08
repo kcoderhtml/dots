@@ -170,6 +170,11 @@
       file = ../secrets/resend.age;
       owner = "kierank";
     };
+    wakatime = {
+      file = ../secrets/wakatime.age;
+      path = "/home/kierank/.wakatime.cfg";
+      owner = "kierank";
+    };
   };
 
   environment.sessionVariables = {

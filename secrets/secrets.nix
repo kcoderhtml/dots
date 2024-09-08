@@ -8,4 +8,5 @@ in
 {
   "wifi.age".publicKeys = [ kierank moonlark ];
   "resend.age".publicKeys = [ kierank moonlark ];
+  "wakatime.age".publicKeys = [ kierank moonlark ];
 }
