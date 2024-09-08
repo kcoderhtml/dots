@@ -19,7 +19,6 @@
       github.vscode-github-actions
       yoavbls.pretty-ts-errors
       esbenp.prettier-vscode
-      vsciot-vscode.vscode-arduino
       ms-vscode.cpptools
       ms-vscode.vscode-serial-monitor
       prisma.prisma
