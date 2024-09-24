@@ -31,6 +31,8 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    cursor.url = "github:omarcresp/cursor-flake/main";
   };
 
   outputs = {
@@ -38,6 +40,7 @@
     nixpkgs,
     nixpkgs-unstable,
     nix-flatpak,
+    cursor,
     agenix,
     home-manager,
     nixos-hardware,

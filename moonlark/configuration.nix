@@ -128,10 +128,13 @@
     pkgs.gnome-online-accounts-gtk
     pkgs.zoom-us
     pkgs.mods
-    pkgs.chromium
+    (pkgs.chromium.override { enableWideVine = true; })
     pkgs.python3
     pkgs.qflipper
     pkgs.inkscape
+    inputs.cursor.packages.${pkgs.system}.default
+    pkgs.jdk22
+    pkgs.deno
   ];
   
   services.gnome.gnome-keyring.enable = true;  
