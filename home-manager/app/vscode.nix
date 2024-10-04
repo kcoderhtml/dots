@@ -31,6 +31,7 @@
       mechatroner.rainbow-csv
       wakatime.vscode-wakatime
       paulober.pico-w-go
+      ms-python.python
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
