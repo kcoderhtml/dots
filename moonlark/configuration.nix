@@ -135,6 +135,7 @@
     inputs.cursor.packages.${pkgs.system}.default
     pkgs.jdk22
     pkgs.deno
+    pkgs.unstable.zed-editor
   ];
   
   services.gnome.gnome-keyring.enable = true;  
