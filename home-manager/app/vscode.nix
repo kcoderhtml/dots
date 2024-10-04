@@ -19,7 +19,6 @@
       github.vscode-github-actions
       yoavbls.pretty-ts-errors
       esbenp.prettier-vscode
-      ms-vscode.cpptools
       ms-vscode.vscode-serial-monitor
       prisma.prisma
       ms-azuretools.vscode-docker
@@ -27,11 +26,11 @@
       github.copilot
       github.copilot-chat
       dotjoshjohnson.xml
-      johnpapa.vscode-cloak
       mikestead.dotenv
       bradlc.vscode-tailwindcss
       mechatroner.rainbow-csv
       wakatime.vscode-wakatime
+      paulober.pico-w-go
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
