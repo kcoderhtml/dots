@@ -136,7 +136,8 @@
     pkgs.jdk22
     pkgs.deno
     pkgs.unstable.zed-editor
-    pkgs.unstable.vscode
+    pkgs.gnome.gnome-disk-utility
+    pkgs.torrential
   ];
   
   services.gnome.gnome-keyring.enable = true;  
