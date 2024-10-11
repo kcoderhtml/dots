@@ -138,6 +138,7 @@
     pkgs.unstable.zed-editor
     pkgs.gnome.gnome-disk-utility
     pkgs.torrential
+    pkgs.unstable.zola
   ];
   
   services.gnome.gnome-keyring.enable = true;  
