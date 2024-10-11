@@ -1,4 +1,4 @@
-{ self, config, lib, pkgs, inputs, ... }: {
+{ self, config, lib, pkgs, inputs, nixpkgs-unstable, ... }: {
   imports = [
     # inputs
     inputs.catppuccin.homeManagerModules.catppuccin
@@ -21,6 +21,12 @@
 
   nixpkgs = {
     overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+      })
       inputs.nix-vscode-extensions.overlays.default
       inputs.catppuccin-vsc.overlays.default
     ];

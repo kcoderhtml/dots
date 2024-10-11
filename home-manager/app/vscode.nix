@@ -8,6 +8,7 @@
   # vscode config
   programs.vscode = {
     enable = true;
+    package = pkgs.unstable.vscode;
     extensions = with pkgs.vscode-marketplace; [
       ms-vscode.live-server
       formulahendry.auto-rename-tag
