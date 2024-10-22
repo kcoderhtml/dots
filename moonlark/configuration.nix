@@ -132,13 +132,13 @@
     pkgs.python3
     pkgs.qflipper
     pkgs.inkscape
-    inputs.cursor.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.system}.specific
     pkgs.jdk22
-    pkgs.deno
     pkgs.unstable.zed-editor
     pkgs.gnome.gnome-disk-utility
     pkgs.torrential
     pkgs.unstable.zola
+    pkgs.unstable.deno  
   ];
   
   services.gnome.gnome-keyring.enable = true;  
@@ -212,6 +212,8 @@
     };
   };
 
+  programs.nix-ld.enable = true;
+
   programs.zsh.enable = true;
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -252,7 +254,6 @@
     nssmdns4 = true;
     openFirewall = true;
   };
-
 
   # enable bluetooth
   hardware.bluetooth.enable = true;

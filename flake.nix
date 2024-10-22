@@ -38,7 +38,7 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    cursor.url = "github:omarcresp/cursor-flake/main";
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   outputs = {
