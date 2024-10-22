@@ -138,9 +138,10 @@
     pkgs.gnome.gnome-disk-utility
     pkgs.torrential
     pkgs.unstable.zola
-    pkgs.unstable.deno  
+    pkgs.unstable.deno
+    pkgs.unstable.amberol
   ];
-  
+
   services.gnome.gnome-keyring.enable = true;  
   programs.dconf.enable = true;
 
