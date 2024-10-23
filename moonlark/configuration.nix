@@ -140,6 +140,7 @@
     pkgs.unstable.zola
     pkgs.unstable.deno
     pkgs.unstable.amberol
+    pkgs.unstable.apktool
   ];
 
   services.gnome.gnome-keyring.enable = true;  
