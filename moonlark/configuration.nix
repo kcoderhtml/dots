@@ -141,6 +141,7 @@
     pkgs.unstable.deno
     pkgs.unstable.amberol
     pkgs.unstable.apktool
+    pkgs.unstable.biome
   ];
 
   services.gnome.gnome-keyring.enable = true;  

@@ -34,6 +34,7 @@
       paulober.pico-w-go
       ms-python.python
       karunamurti.tera
+      biomejs.biome
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
@@ -57,21 +58,7 @@
       
       "editor.formatOnSave" = true;
 
-      "[json]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[javascript]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[typescript]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[html]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
-      "[css]" = {
-        "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      };
+      "editor.defaultFormatter" = "biomejs.biome";
 
       "editor.linkedEditing" = true;
     };
