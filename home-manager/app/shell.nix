@@ -120,6 +120,20 @@
               ssh -p $port -o "BatchMode yes" $host || sleep 1
           done
       }
+      # hackatime summary
+      summary() {
+        local user_id=$1
+        curl -X 'GET' \
+          "https://waka.hackclub.com/api/summary?user=''${user_id}&interval=high_seas" \
+          -H 'accept: application/json' \
+          -H 'Authorization: Bearer 2ce9e698-8a16-46f0-b49a-ac121bcfd608' | jq '. + {
+            "total_categories_sum": (.categories | map(.total) | add),
+            "total_categories_human_readable": (
+                (.categories | map(.total) | add) as $total_seconds |
+                "\($total_seconds / 3600 | floor)h \(($total_seconds % 3600) / 60 | floor)m \($total_seconds % 60)s"
+            )
+        }'
+      }
     '';
     history = {
       size = 10000;
