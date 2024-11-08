@@ -59,7 +59,10 @@
       "editor.formatOnSave" = true;
 
       "editor.defaultFormatter" = "biomejs.biome";
-
+      "[go]" = {
+        "editor.defaultFormatter" = "golang.go";
+      };
+      
       "editor.linkedEditing" = true;
     };
   };
