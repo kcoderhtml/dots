@@ -12,7 +12,7 @@
 
   # hyprlock config
   xdg.configFile."hypr/hyprlock.conf".source = ../../dots/hyprlock.conf;
-  xdg.configFile."face.png".source = ../../dots/face.png;
+  xdg.configFile."face.jpeg".source = ../../dots/face.jpeg;
   programs.hyprlock.enable = true;
 
   # sunpaper
