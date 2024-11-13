@@ -62,7 +62,10 @@
       "[go]" = {
         "editor.defaultFormatter" = "golang.go";
       };
-      
+      "[yaml]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+
       "editor.linkedEditing" = true;
     };
   };
