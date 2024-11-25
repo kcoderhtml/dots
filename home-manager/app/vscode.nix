@@ -35,6 +35,8 @@
       ms-python.python
       karunamurti.tera
       biomejs.biome
+      bschulte.love
+      sumneko.lua
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
