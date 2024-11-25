@@ -142,6 +142,9 @@
     pkgs.unstable.amberol
     pkgs.unstable.apktool
     pkgs.unstable.biome
+    pkgs.gcc
+    pkgs.love
+    pkgs.aseprite
   ];
 
   services.gnome.gnome-keyring.enable = true;  
@@ -211,6 +214,8 @@
       networks = {
         "KlukasNet".psk = "@PSK_HOME@";
         "Everseen".psk = "@PSK_HOTSPOT@";
+        "SAAC Sanctuary".psk = "@PSK_CHURCH@";
+        "MVNU-student" = {};
       };
     };
   };
