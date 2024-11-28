@@ -37,6 +37,7 @@
       biomejs.biome
       bschulte.love
       sumneko.lua
+      yinfei.luahelper
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
@@ -66,6 +67,9 @@
       };
       "[yaml]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[lua]" = {
+        "editor.defaultFormatter" = "yinfei.luahelper";
       };
 
       "editor.linkedEditing" = true;
