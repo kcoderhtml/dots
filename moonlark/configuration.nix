@@ -145,6 +145,7 @@
     pkgs.gcc
     pkgs.love
     pkgs.aseprite
+    pkgs.audacity
   ];
 
   services.gnome.gnome-keyring.enable = true;  
