@@ -9,6 +9,7 @@
 
   # hyprland config
   xdg.configFile."hypr/hyprland.conf".source = ../../dots/hyprland.conf;
+  xdg.configFile."hypr/prettify-ss.sh".source = ../../dots/prettify-ss.sh;
 
   # hyprlock config
   xdg.configFile."hypr/hyprlock.conf".source = ../../dots/hyprlock.conf;
