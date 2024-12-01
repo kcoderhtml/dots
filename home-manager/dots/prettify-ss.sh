@@ -11,7 +11,7 @@ FINAL_IMAGE=$(mktemp --suffix=.png)
 wl-paste --type image/png > "$TEMP_IMAGE"
 
 # Extract standout colors (3 dominant colors)
-COLORS=$(magick "$TEMP_IMAGE" -format %c -resize 1x3! txt:- | grep -oP '#[0-9A-Fa-f]{6}' | head -n 3)
+COLORS=$(magick "$TEMP_IMAGE" -colors 3 -unique-colors txt: | grep -oP '#[0-9A-Fa-f]{6}')
 COLOR1=$(echo "$COLORS" | head -n 1)
 COLOR2=$(echo "$COLORS" | tail -n 1 | head -n 1)
 COLOR3=$(echo "$COLORS" | tail -n 1)
