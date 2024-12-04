@@ -71,6 +71,9 @@
       "[lua]" = {
         "editor.defaultFormatter" = "yinfei.luahelper";
       };
+      "[html]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
 
       "editor.linkedEditing" = true;
     };
