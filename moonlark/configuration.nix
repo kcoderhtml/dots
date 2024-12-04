@@ -147,6 +147,7 @@
     pkgs.aseprite
     pkgs.audacity
     pkgs.imagemagick
+    pkgs.wtype
   ];
 
   services.gnome.gnome-keyring.enable = true;  
