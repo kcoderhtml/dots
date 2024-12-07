@@ -148,6 +148,8 @@
     pkgs.audacity
     pkgs.imagemagick
     pkgs.wtype
+    pkgs.rustc
+    pkgs.cargo
   ];
 
   services.gnome.gnome-keyring.enable = true;  
