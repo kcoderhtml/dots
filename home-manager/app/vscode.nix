@@ -39,6 +39,9 @@
       sumneko.lua
       yinfei.luahelper
       tamasfe.even-better-toml
+      fill-labs.dependi
+      rust-lang.rust-analyzer
+      dustypomerleau.rust-syntax
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
