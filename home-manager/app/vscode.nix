@@ -38,6 +38,7 @@
       bschulte.love
       sumneko.lua
       yinfei.luahelper
+      tamasfe.even-better-toml
     ]
     ++ [(pkgs.catppuccin-vsc.override {
       accent = "blue";
