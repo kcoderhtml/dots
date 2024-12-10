@@ -13,6 +13,7 @@
     aliases = {
       c = "commit";
       p = "push";
+      ch = "checkout";
     };
     extraConfig = {
       branch.sort = "-committerdate";
