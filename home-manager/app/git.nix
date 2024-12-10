@@ -15,6 +15,9 @@
       p = "push";
     };
     extraConfig = {
+      branch.sort = "-committerdate";
+      pager.branch = false;
+      column.ui = "auto";
       commit.gpgsign = true;
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.ssh/allowedSigners";
