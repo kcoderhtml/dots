@@ -14,6 +14,7 @@
       c = "commit";
       p = "push";
       ch = "checkout";
+      pushfwl = "push --force-with-lease --force-if-includes";
     };
     extraConfig = {
       branch.sort = "-committerdate";
@@ -24,6 +25,7 @@
       gpg.ssh.allowedSignersFile = "~/.ssh/allowedSigners";
       user.signingKey = "~/.ssh/id_rsa.pub";
       pull.rebase = true;
+      push.autoSetupRemote = true;
     };
   };
 }
