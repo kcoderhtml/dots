@@ -57,11 +57,6 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  time = {
-    timeZone = "America/New_York";
-    hardwareClockInLocalTime = true;
-  };
-
   services.automatic-timezoned.enable = true;
 
   environment.systemPackages = map lib.lowPrio [
@@ -153,7 +148,8 @@
     pkgs.gobang
   ];
 
-  services.gnome.gnome-keyring.enable = true;  
+  services.gnome.gnome-keyring.enable = true;
+  services.automatic-timezoned.enable = true;
   programs.dconf.enable = true;
 
   systemd = {
