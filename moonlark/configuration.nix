@@ -94,7 +94,6 @@
     pkgs.polkit_gnome
     pkgs.fprintd
     pkgs.gitMinimal
-    pkgs.github-desktop
     pkgs.udiskie
     pkgs.neofetch
     pkgs.cava
@@ -129,7 +128,7 @@
     inputs.zen-browser.packages.${pkgs.system}.specific
     pkgs.jdk23
     pkgs.unstable.zed-editor
-    pkgs.gnome.gnome-disk-utility
+    pkgs.gnome-disk-utility
     pkgs.torrential
     pkgs.unstable.zola
     pkgs.unstable.deno
