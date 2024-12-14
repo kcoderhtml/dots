@@ -149,7 +149,6 @@
   ];
 
   services.gnome.gnome-keyring.enable = true;
-  services.automatic-timezoned.enable = true;
   programs.dconf.enable = true;
 
   systemd = {
@@ -210,13 +209,13 @@
     hostName = "moonlark";
     nameservers = [ "1.1.1.1" "9.9.9.9" ];
     wireless = {
-      environmentFile = config.age.secrets.wifi.path;
+      secretsFile = config.age.secrets.wifi.path;
       userControlled.enable = true;
       enable = true;
       networks = {
-        "KlukasNet".psk = "@PSK_HOME@";
-        "Everseen".psk = "@PSK_HOTSPOT@";
-        "SAAC Sanctuary".psk = "@PSK_CHURCH@";
+        "KlukasNet".pskRaw = "ext:psk_home";
+        "Everseen".pskRaw = "ext:psk_hotspot";
+        "SAAC Sanctuary".pskRaw = "ext:psk_church";
         "MVNU-student" = {};
       };
     };
