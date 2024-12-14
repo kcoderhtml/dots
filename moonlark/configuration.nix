@@ -127,7 +127,7 @@
     pkgs.qflipper
     pkgs.inkscape
     inputs.zen-browser.packages.${pkgs.system}.specific
-    pkgs.jdk22
+    pkgs.jdk23
     pkgs.unstable.zed-editor
     pkgs.gnome.gnome-disk-utility
     pkgs.torrential
