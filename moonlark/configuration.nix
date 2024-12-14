@@ -150,6 +150,7 @@
     pkgs.wtype
     pkgs.rustc
     pkgs.cargo
+    pkgs.gobang
   ];
 
   services.gnome.gnome-keyring.enable = true;  
