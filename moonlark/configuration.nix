@@ -86,11 +86,11 @@
     pkgs.playerctl
     pkgs.firefox
     pkgs.slack
-    pkgs.gnome.nautilus
-    pkgs.gnome.totem
+    pkgs.nautilus
+    pkgs.totem
     pkgs.loupe
-    pkgs.gnome.simple-scan
-    pkgs.gnome.file-roller
+    pkgs.simple-scan
+    pkgs.file-roller
     pkgs.polkit_gnome
     pkgs.fprintd
     pkgs.gitMinimal
@@ -118,7 +118,6 @@
     pkgs.unstable.kicad
     pkgs.unstable.mitmproxy
     pkgs.glow
-    pkgs.gnome.geary
     pkgs.gnome-online-accounts
     pkgs.gnome-online-accounts-gtk
     pkgs.zoom-us
