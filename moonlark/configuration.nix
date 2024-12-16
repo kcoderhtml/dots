@@ -57,7 +57,7 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  services.automatic-timezoned.enable = true;
+  time.timeZone = "America/New_York";
 
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
