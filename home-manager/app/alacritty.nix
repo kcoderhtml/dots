@@ -29,7 +29,7 @@
         size = 13;
         normal = {
           family = "JetBrainsMono Nerd Font";
-        };        
+        };
       };
       colors = {
         primary = {
