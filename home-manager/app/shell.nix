@@ -57,7 +57,7 @@
               background = "transparent";
               template = "{{ .FormattedMs }}";
               properties = {
-                threshold = 5000;
+                threshold = 3000;
               };
             }
           ];
