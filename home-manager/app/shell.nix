@@ -33,9 +33,11 @@
               style = "plain";
               foreground = "p:grey";
               background = "transparent";
-              template = "{{if not .Detached}}{{ .HEAD }}{{else}}@{{ printf \"%.7s\" .Commit.Sha }}{{end}}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>";
+              template = "{{if not .Detached}}{{ .HEAD }}{{else}}@{{ printf \"%.7s\" .Commit.Sha }}{{end}}{{ if .Staging.Changed }} ({{ .Staging.String }}){{ end }}{{ if .Working.Changed }}*{{ end }} <cyan>{{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}</>";
               properties = {
                 branch_icon = "";
+                branch_ahead_icon = "⇡";
+                branch_behind_icon = "⇣";
                 commit_icon = "@";
                 fetch_status = true;
               };
