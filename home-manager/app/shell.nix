@@ -89,7 +89,7 @@
         template = "❯ ";
       };
       secondary_prompt = {
-        foreground = "magenta";
+        foreground = "p:gray";
         background = "transparent";
         template = "❯❯ ";
       };
@@ -139,10 +139,23 @@
                 )
         }'
       }
+
+      zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"
+      zstyle ':completion:*' menu no
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
     '';
     history = {
       size = 10000;
       path = "${config.xdg.dataHome}/zsh/history";
+      ignoreDups = true;
+      ignoreAllDups = true;
+      ignoreSpace = true;
+      expireDuplicatesFirst = true;
+      share = true;
+      extended = true;
+      append = true;
     };
 
     oh-my-zsh = {
