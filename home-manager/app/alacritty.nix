@@ -10,8 +10,9 @@
   # alacritty
   programs.alacritty = {
     enable = true;
+    catppuccin.flavor = "mocha";
     settings = {
-      live_config_reload = true;
+      general.live_config_reload = true;
       cursor = {
         unfocused_hollow = true;
         style = {
@@ -19,7 +20,7 @@
         };
       };
       window = {
-        opacity = 0.75;
+        opacity = 0.88;
         padding = {
           x = 12;
           y = 12;
@@ -29,11 +30,6 @@
         size = 13;
         normal = {
           family = "JetBrainsMono Nerd Font";
-        };
-      };
-      colors = {
-        primary = {
-          background = lib.mkForce "#1E2128";
         };
       };
     };
