@@ -5,97 +5,96 @@
   pkgs,
   ...
 }: {
-  programs.starship = {
+  programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;
-    # Configuration written to ~/.config/starship.toml
     settings = {
-      add_newline = false;
-      
-      # Change command timeout from 500 to 1000 ms
-      command_timeout = 1000;
-      
-      format = lib.concatStrings [
-        "\n"
-        "$env_var"
-        "$all$character"
+      version = 2;
+      final_space = true;
+      console_title_template = "{{ .Shell }} in {{ .Folder }}";
+      blocks = [
+        {
+          type = "prompt";
+          alignment = "left";
+          newline = true;
+          segments = [
+            {
+              type = "path";
+              style = "plain";
+              background = "transparent";
+              foreground = "blue";
+              template = "{{ .Path }} ";
+              properties = {
+                style = "full";
+              };
+            }
+            {
+              type = "git";
+              style = "plain";
+              foreground = "p:grey";
+              background = "transparent";
+              template = "{{if not .Detached}}{{ .HEAD }}{{else}}@{{ printf \"%.7s\" .Commit.Sha }}{{end}}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>";
+              properties = {
+                branch_icon = "";
+                commit_icon = "@";
+                fetch_status = true;
+              };
+            }
+          ];
+        }
+        {
+          type = "rprompt";
+          overflow = "hidden";
+          segments = [
+            {
+              type = "executiontime";
+              style = "plain";
+              foreground = "yellow";
+              background = "transparent";
+              template = "{{ .FormattedMs }}";
+              properties = {
+                threshold = 5000;
+              };
+            }
+          ];
+        }
+        {
+          type = "prompt";
+          alignment = "left";
+          newline = true;
+          segments = [
+            {
+              type = "text";
+              style = "plain";
+              foreground_templates = [
+                "{{if gt .Code 0}}red{{end}}"
+                "{{if eq .Code 0}}magenta{{end}}"
+              ];
+              background = "transparent";
+              template = "❯";
+            }
+          ];
+        }
       ];
-      
-      character = {
-        success_symbol = "[](bold purple)";
-        error_symbol = "[](bold red)";
+      transient_prompt = {
+        foreground_templates = [
+          "{{if gt .Code 0}}red{{end}}"
+          "{{if eq .Code 0}}magenta{{end}}"
+        ];
+        background = "transparent";
+        template = "❯ ";
       };
-      
-      username = {
-        style_user = "green";
-        style_root = "red";
-        format = "[󱄅 $user]($style) ";
-	      disabled = false;
-        show_always = true;
+      secondary_prompt = {
+        foreground = "magenta";
+        background = "transparent";
+        template = "❯❯ ";
       };
-      
-      hostname = {
-        ssh_only = false;
-        format = "on [$hostname](bold yellow) ";
-        disabled = false;
+      palette = {
+        grey = "#6c6c6c";
       };
-
-      directory = {
-        truncation_length = 1;
-        truncation_symbol = "…/";
-        home_symbol = "  ~";
-        read_only_style = "197";
-        read_only = "  ";
-        format = "at [$path]($style)[$read_only]($read_only_style) ";
-      };
-
-      git_branch = {
-        symbol = "󰊢 ";
-        format = "via [$symbol$branch]($style) ";
-        truncation_length = 6;
-        truncation_symbol = "…/";
-        style = "bold green";
-      };
-
-      git_status = {
-         format = "[《$all_status$ahead_behind》]($style) ";
-         style = "bold green";
-         conflicted = " ";
-         up_to_date = " ";
-         untracked = " ";
-         ahead = "⇡$count ";
-         diverged = "⇡$ahead_count⇣$behind_count ";
-         behind = "⇣$count ";
-         stashed = "󱑿 ";
-         modified = " ";
-         staged = "[⟨++$count⟩ ](green)";
-         renamed = "󱅄 ";
-         deleted = " ";
-       };
-
-       docker_context = {
-         symbol = " ";
-         disabled = false;
-       };
-
-       python = {
-         symbol = "󰌠 ";
-         python_binary = "python3";
-         disabled = false;
-       };
-
-       nodejs = {
-         symbol = " ";
-         detect_files = ["package.json" ".node-version" "!bunfig.toml" "!bun.lockb"];
-         disabled = false;
-       };
-
-       bun = {
-         symbol = "󰟈 ";
-         disabled = false;
-       };
     };
   };
+
 
   programs.zsh = {
     enable = true;
@@ -105,7 +104,6 @@
     shellAliases = {
       ll = "ls -l";
       la = "ls -la";
-      update = "sudo nixos-rebuild switch";
       gc = "git commit";
       gp = "git push";
       rr = "rm -Rf";
@@ -175,5 +173,5 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
-  }; 
+  };
 }
