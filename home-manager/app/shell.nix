@@ -184,10 +184,25 @@
          sha256 = "sha256-iJdWopZwHpSyYl5/FQXEW7gl/SrKaYDEtTH9cGP7iPo=";
         };
       }
+      {
+        # fzf tab completion
+        name = "fzf-tab";
+        src = pkgs.fetchFromGitHub {
+          owner = "aloxaf";
+          repo = "fzf-tab";
+          rev = "v1.1.2";
+          sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
+        };
+      }
     ];
   };
 
   programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.fzf = {
     enable = true;
     enableZshIntegration = true;
   };
