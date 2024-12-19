@@ -36,6 +36,8 @@
               template = "{{if not .Detached}}{{ .HEAD }}{{else}}@{{ printf \"%.7s\" .Commit.Sha }}{{end}}{{ if .Staging.Changed }} ({{ .Staging.String }}){{ end }}{{ if .Working.Changed }}*{{ end }} <cyan>{{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}</>";
               properties = {
                 branch_icon = "";
+                branch_identical_icon = "";
+                branch_gone_icon = "";
                 branch_ahead_icon = "⇡";
                 branch_behind_icon = "⇣";
                 commit_icon = "@";
