@@ -144,6 +144,7 @@
     pkgs.rustc
     pkgs.cargo
     pkgs.gobang
+    pkgs.caido
   ];
 
   services.gnome.gnome-keyring.enable = true;
