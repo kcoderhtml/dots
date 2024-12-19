@@ -32,6 +32,14 @@
           family = "JetBrainsMono Nerd Font";
         };
       };
+      colors = {
+        normal = {
+          magenta = lib.mkForce "#db87c5";
+        };
+        primary = {
+          foreground = lib.mkForce "#ABB2BF";
+        };
+      };
     };
   };
 }
