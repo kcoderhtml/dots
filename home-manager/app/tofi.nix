@@ -5,10 +5,12 @@
   pkgs,
   ...
 }: {
+  catppuccin.tofi.enable = false;
+
+
   # tofi config
   programs.tofi = {
     enable = true;
-    catppuccin.enable = false;
     settings = {
       font = "Fira Sans";
       font-size = 24;

@@ -68,10 +68,14 @@
     enable = true;
     accent = "green";
     flavor = "macchiato";
-    pointerCursor = {
+    cursors = {
       enable = true;
       accent = "blue";
       flavor = "macchiato";
+    };
+    gtk = {
+      enable = true;
+      tweaks = [ "normal" ];
     };
   };
 
@@ -83,10 +87,6 @@
 
   gtk = {
     enable = true;
-    catppuccin = {
-      enable = true;
-      tweaks = [ "normal" ];
-    };
   };
 
 

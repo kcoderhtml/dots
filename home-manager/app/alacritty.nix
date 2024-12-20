@@ -7,10 +7,11 @@
   pkgs,
   ...
 }: {
+  catppuccin.alacritty.flavor = "mocha";
+
   # alacritty
   programs.alacritty = {
     enable = true;
-    catppuccin.flavor = "mocha";
     settings = {
       general.live_config_reload = true;
       cursor = {
